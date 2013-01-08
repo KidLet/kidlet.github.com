@@ -1,0 +1,67 @@
+---
+layout: post
+title: "Ubuntu下卸载 Ruby RubyGems Rails"
+description: "Ubuntu下卸载 Ruby RubyGems Rails"
+category: Ruby
+tags: [Ruby]
+---
+{% include JB/setup %}
+
+环境 __Ubuntu 12.04__   __Ruby1.9.3__   __RubyGem1.8.24__    __Rails3.2.9__
+
+因为想装RVM 所以要对上述程序进行删除，其中  `Ruby` 和 `RubyGem` 均是采用从官方下载源代码进行编译安装的
+
+结果发现 官方提供的  Makefile 文件并没有提供 uninstall功能， 而当初我在configure的时候也并没有指定 prefix参数
+
+所以都是采用默认路径安装的。
+
+首先我们先卸载 通过 Gem 安装的东西。 通过 gem list 可以看到安装了哪些， 其中当然包括了rails。但是多达几十项显然不可能手工
+
+gem uninstall 来删除， 于是写了个python脚本 （请用`sudo`来执行）
+
+
+    #! /usr/bin/env python3
+    # Code by KidLet  12.19
+    import subprocess
+    import re
+     
+    (status, output) = subprocess.getstatusoutput("gem list")
+     
+    #print( output )
+    lines = output.split ('\n')
+    for line in lines:
+        name = line.split (' ', 1 )
+        subprocess.getstatusoutput("gem uninstall "+name[0]+" -a -x -I")
+        #print ( "gem uninstall "+name[0]+" -a" )
+
+
+
+这时候再运行 gem list 可以发现所有都已经被删除了。
+那么接下来就删除 gem 了
+通过下列命令获得Ruby的安装位置
+
+    ruby -e "puts $:"
+    /usr/local/lib/ruby/site_ruby/1.9.1
+    /usr/local/lib/ruby/site_ruby/1.9.1/i686-linux
+    /usr/local/lib/ruby/site_ruby
+    /usr/local/lib/ruby/vendor_ruby/1.9.1
+    /usr/local/lib/ruby/vendor_ruby/1.9.1/i686-linux
+    /usr/local/lib/ruby/vendor_ruby
+    /usr/local/lib/ruby/1.9.1
+    /usr/local/lib/ruby/1.9.1/i686-linux
+
+
+删除ruby安装的文件夹 以及一些link文件
+
+	rm -rf /usr/local/lib/ruby/
+	rm -rf /usr/local/bin/gem
+	rm -rf /usr/local/bin/ruby
+	rm -rf /usr/bin/gem
+	rm -rf /usr/bin/ruby
+
+至此Ruby RubyGems Rails已经成功 删除了。
+总结下：
+
+> 如果要通过源码编译安装 建议通过 prefix 参数制定安装位置
+> 安装Ruby 建议通过RVM， 方便管理和删除
+> 通过源码编译的程序，最好保留源代码，因为作者可能提供 make uninstall 来卸载
