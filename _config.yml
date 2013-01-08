@@ -12,11 +12,11 @@ pygments: true
 title : KidLet's Blog
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : KidLet
+  email : kidlets@qq.com
+  github : KidLet
+ # twitter : username
+ # feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
