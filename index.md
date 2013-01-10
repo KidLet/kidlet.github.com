@@ -1,6 +1,6 @@
 ---
 layout: page
-title: KidLet的文章
+title: KidLet的博客
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
