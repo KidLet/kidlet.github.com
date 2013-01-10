@@ -53,13 +53,11 @@ gem uninstall 来删除， 于是写了个python脚本 （请用`sudo`来执行�
 
 删除ruby安装的文件夹 以及一些link文件
 
-
 	rm -rf /usr/local/lib/ruby/
 	rm -rf /usr/local/bin/gem
 	rm -rf /usr/local/bin/ruby
 	rm -rf /usr/bin/gem
 	rm -rf /usr/bin/ruby
-
 
 至此Ruby RubyGems Rails已经成功 删除了。
 总结下：
@@ -67,3 +65,11 @@ gem uninstall 来删除， 于是写了个python脚本 （请用`sudo`来执行�
 > 如果要通过源码编译安装 建议通过 prefix 参数制定安装位置
 > 安装Ruby 建议通过RVM， 方便管理和删除
 > 通过源码编译的程序，最好保留源代码，因为作者可能提供 make uninstall 来卸载
+
+<pre class="bash">
+	rm -rf /usr/local/lib/ruby/
+	rm -rf /usr/local/bin/gem
+	rm -rf /usr/local/bin/ruby
+	rm -rf /usr/bin/gem
+	rm -rf /usr/bin/ruby
+</pre>

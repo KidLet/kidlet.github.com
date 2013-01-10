@@ -19,28 +19,28 @@ tags: [Ruby]
 
 gem uninstall 来删除， 于是写了个python脚本 （请用`sudo`来执行）
 
-
-    #! /usr/bin/env python3
-    # Code by KidLet  12.19
-    import subprocess
-    import re
-     
-    (status, output) = subprocess.getstatusoutput("gem list")
-     
-    #print( output )
-    lines = output.split ('\n')
-    for line in lines:
-        name = line.split (' ', 1 )
-        subprocess.getstatusoutput("gem uninstall "+name[0]+" -a -x -I")
-        #print ( "gem uninstall "+name[0]+" -a" )
-
+<pre class="brush: python" style="padding: 10px;">
+#! /usr/bin/env python3
+# Code by KidLet  12.19
+import subprocess
+import re
+ 
+(status, output) = subprocess.getstatusoutput("gem list")
+ 
+#print( output )
+lines = output.split ('\n')
+for line in lines:
+    name = line.split (' ', 1 )
+    subprocess.getstatusoutput("gem uninstall "+name[0]+" -a -x -I")
+    #print ( "gem uninstall "+name[0]+" -a" )
+</pre>
 
 
 这时候再运行 gem list 可以发现所有都已经被删除了。
 那么接下来就删除 gem 了
 通过下列命令获得Ruby的安装位置
-
-    ruby -e "puts $:"
+<pre class="brush: bash">
+ruby -e "puts $:"
     /usr/local/lib/ruby/site_ruby/1.9.1
     /usr/local/lib/ruby/site_ruby/1.9.1/i686-linux
     /usr/local/lib/ruby/site_ruby
@@ -49,17 +49,17 @@ gem uninstall 来删除， 于是写了个python脚本 （请用`sudo`来执行�
     /usr/local/lib/ruby/vendor_ruby
     /usr/local/lib/ruby/1.9.1
     /usr/local/lib/ruby/1.9.1/i686-linux
-
+</pre>
 
 删除ruby安装的文件夹 以及一些link文件
 
-
+<pre class="brush: bash">
 	rm -rf /usr/local/lib/ruby/
 	rm -rf /usr/local/bin/gem
 	rm -rf /usr/local/bin/ruby
 	rm -rf /usr/bin/gem
 	rm -rf /usr/bin/ruby
-
+</pre>
 
 至此Ruby RubyGems Rails已经成功 删除了。
 总结下：
