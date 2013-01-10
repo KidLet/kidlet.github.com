@@ -7,5 +7,4 @@ http://kidlet.github.com/archive.html
 http://kidlet.github.com/sitemap.txt
 http://kidlet.github.com/categories.html
 
-http://kidlet.github.com/Ruby/2013-01-09/ubuntu-install-ruby2
 http://kidlet.github.com/Ruby/2013-01-08/ubuntu-install-ruby
