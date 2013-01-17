@@ -60,6 +60,7 @@ tags: [Ruby]
 >此时你 已经可以执行 ruby -v 和 gem -v  成功， 并显示相应的版本
 >建议通过RVM来安装Ruby， 可以较方便的管理你的Rubys
 >后续还可以 通过Gem安装Rails等组件
+
 ---
 参考:
 1. [Installing RVM (官方)](https://rvm.io/rvm/install/)
