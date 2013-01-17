@@ -1,0 +1,69 @@
+---
+layout: post
+title: "Ruby 入门 （0） 搭建环境"
+description: "Ruby 入门 （0） 搭建环境"
+category: Ruby
+tags: [Ruby]
+---
+{% include JB/setup %}
+
+环境 __Ubuntu 12.04__ 
+
+####第一步 前提
+
+先安装一些必要的东西， 因为我们要先安装 `RVM` （Ruby Version Manager）
+
+	sudo apt-get install git curl
+
+####第二步 安装RVM
+
+安装 RVM 采用官方建议的做法
+
+<p>1. 执行下列命令， 建议在网络情况较好的时候执行</p>
+
+	\curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
+
+等待一段时间后会提示 安装成功
+
+<p>2. 修改 ~/.bashrc 文件 用编辑器打开并在 最后添加</p>
+
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+>不添加的话会导致 rvm 无法正常执行 出现 RVM is not a function 的错误
+
+<p>3. 执行</p>
+
+	source ~/.bashrc
+
+<p>4. 运行 rvm requirements 查看仍需要安装的库</p>
+
+<pre><code>sudo /usr/bin/apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config</code></pre>
+
+
+####第三步 安装Ruby
+
+1. rvm list known&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #339966;">#查看可以安装哪些版本</span>
+2. rvm install 1.9.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #339966;">#安装Ruby 1.9.3</span>
+3. rvm use 1.9.3 --default&nbsp;&nbsp;<span style="color: #339966;">#使用指定版本并设为默认， 这样不用每次重启机器后 执行 rvm use 命令</span>
+
+
+
+####第四步 修改Gem镜像
+
+1. 由于在 第三步的时候已经帮我们安装好了 RubyGems 无需另外去下载安装了
+为了提高 Gem 的 安装包的速度 我们删除国外的源， 添加国内的 [淘宝源](http://ruby.taobao.org/) http://ruby.taobao.org/
+2. gem sources -a http://ruby.taobao.org/ <span style="color: #339966;">#添加源</span>
+3. gem sources -r https://rubygems.org/  &nbsp;&nbsp;<span style="color: #339966;">#删除官方源</span>
+
+`Tip` : 可以通过 gem sources -l 来查看所有添加了的源
+
+####总结
+>此时你 已经可以执行 ruby -v 和 gem -v  成功， 并显示相应的版本
+>建议通过RVM来安装Ruby， 可以较方便的管理你的Rubys
+>后续还可以 通过Gem安装Rails等组件
+
+---
+参考:
+1. [Installing RVM (官方)](https://rvm.io/rvm/install/)
+2. [Ubuntu下RoR开发环境的安装](http://www.ruchee.com/code/ruby/tools/ubuntu.html)
+
