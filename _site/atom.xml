@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-01-17T18:23:14+08:00</updated>
+ <updated>2013-01-17T19:03:19+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -63,7 +63,7 @@
 
 &lt;p&gt;&lt;code&gt;Tip&lt;/code&gt; : 可以通过 gem sources -l 来查看所有添加了的源&lt;/p&gt;
 
-&lt;h4 id='id8'&gt;总结&lt;/h4&gt;
+&lt;h4 id='id9'&gt;总结&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;此时你 已经可以执行 ruby -v 和 gem -v 成功， 并显示相应的版本 建议通过RVM来安装Ruby， 可以较方便的管理你的Rubys 后续还可以 通过Gem安装Rails等组件&lt;/p&gt;
