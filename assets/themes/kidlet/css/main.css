@@ -33,7 +33,6 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	margin-bottom: 20px;
 	position: relative;
 	border-bottom: 1px solid #ccc;
-
 }
 
 #nav
@@ -58,20 +57,16 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 
 #menu li
 {
-	padding-right:20px; /* 将默认的内边距去掉 */
+	padding-right:20px; 
 	float:left;
 }
 
 #menu li a 
 {
-/*display:block; /* 将链接设为块级元素 */
 	font-size: 21px;
-	/*text-decoration: none;*/
 	border-bottom: 1px dashed rgb(167,61,41);
 }
 
-/*#menu li a:hover { text-decoration: underline;}*/
-/*a:hover { text-decoration: underline;}*/
 /* ------------head end --------------*/
 
 #main
@@ -101,6 +96,7 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	margin-left: 5px;
 	float: left;
 }
+/* ------------Main end --------------*/
 
 #foot
 {
@@ -115,13 +111,12 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	text-align: center;
 	color: rgb(120,120,120);
 }
-
+/* ------------foot end --------------*/
 
 .post_time
 {
 	position: relative;
 	left: 400px;
-	/*top: 0px;*/
 	color: rgb(120,120,120);
 }
 
@@ -149,6 +144,7 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	top: 0px;
 	font-weight:bold;
 }
+/* ------------post end --------------*/
 
 
 
