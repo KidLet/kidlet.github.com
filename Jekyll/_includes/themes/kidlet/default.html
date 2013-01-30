@@ -24,16 +24,18 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   <body>
 
       <div id="head">
-        <div id="logo">
 
+        <div id="logo">
+          <img src="{{ ASSET_PATH }}/img/logo.png"  alt="KidLet" />
         </div>
         
-        <div class="nav">
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+        <div id="nav">
+          <ul id="menu" >
+            <li><a href="#">首页</a></li>
+            <li><a href="#">文章</a></li>
+            <li><a href="#">关于</a></li>
           </ul>
+          
         </div>
 
       </div> <!-- head end -->
@@ -42,15 +44,35 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       <div id="main">
 
         <div id="content">
-          
+          {{ content }}
         </div>
 
         <div id="Left">
+
+          <div id="catalogues">
+            <h3>分类</h3>
+            <ul>
+                {% assign categories_list = site.categories %}  
+                {% include JB/categories_list %}
+                <li>aaaaaa</li>
+            </ul>
+          </div>
+
+          <div id="links">
+            <h3>链接</h3>
+            <ul>
+                <li><a href="http://runbot.net/">RunBot</a></li>
+                <li><a href="http://blog.csdn.net/Night__elf">Night_Elf</a></li>
+            </ul>
+          </div>
+
+
         </div> <!-- Left end -->
 
       </div> <!-- main end -->
 
       <div id="foot">
+        <p>版权所有 ©  KidLet's Blog 主题由 KidLet 设计 由 Jekyll 驱动</p>
       </div>
 
   </body>
