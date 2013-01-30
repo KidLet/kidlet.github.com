@@ -5,11 +5,21 @@
 body
 {
 	background-color: rgb(255,255,255);
-	font-family: consolas, monaco,"Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+	font-family: monaco, consolas, monospace, "Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
 	margin: 0 auto;
 	width: 900px;
 	min-width: 900px;
+	line-height: 1.35em;
 }
+
+h1,h2,h3,h4 {color: black}
+a 
+{ 
+	color: rgb(167,61,41);
+	text-decoration: none; 
+}
+a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
+
 
 #head
 {
@@ -17,7 +27,10 @@ body
 	width: 900px;
 	height: 125px;
 	min-width: 900px;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 20px;
 	position: relative;
 	border-bottom: 1px solid #ccc;
 
@@ -27,7 +40,7 @@ body
 {
 	position: absolute;
 	top: 80px;
-	right: 60px;
+	right: 50px;
 }
 
 #logo
@@ -53,12 +66,12 @@ body
 {
 /*display:block; /* 将链接设为块级元素 */
 	font-size: 21px;
-	text-decoration: none;
-	:hover;
+	/*text-decoration: none;*/
+	border-bottom: 1px dashed rgb(167,61,41);
 }
 
-#menu li a:hover { text-decoration: underline;}
-
+/*#menu li a:hover { text-decoration: underline;}*/
+/*a:hover { text-decoration: underline;}*/
 /* ------------head end --------------*/
 
 #main
@@ -100,15 +113,16 @@ body
 #foot p
 {
 	text-align: center;
-	color: rgb(120, 120, 120);
+	color: rgb(120,120,120);
 }
 
 
-.time
+.post_time
 {
-/*	position: absolute;
-	left: -90px;
-	top: 0px;*/
+	position: relative;
+	left: 400px;
+	/*top: 0px;*/
+	color: rgb(120,120,120);
 }
 
 .post_summary
@@ -128,8 +142,13 @@ body
 	padding-left: 30px;
 }
 
-.post_title a
+.post_category
 {
-	text-decoration: none;
-
+	position: absolute;
+	right: 90px;
+	top: 0px;
+	font-weight:bold;
 }
+
+
+
