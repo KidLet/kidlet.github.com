@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-02-07T14:13:42+08:00</updated>
+ <updated>2013-02-07T14:51:00+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>no for test</title>
+   <title>这是一个测试</title>
    <link href="http://kidlet.github.com/Catolog12/2013/01/29/fortest"/>
    <updated>2013-01-29T00:00:00+08:00</updated>
    <id>http://kidlet.github.com/Catolog12/2013/01/29/fortest</id>
