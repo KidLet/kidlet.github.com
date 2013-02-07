@@ -1,0 +1,93 @@
+/*
+	Author: KidLet;
+	Date: 2013-1-28;
+*/
+
+#main
+{
+	display: block;
+	width: 900px;
+	min-width: 900px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#content
+{
+	position: relative;
+	width: 650px;
+	display: block;
+	margin-right: 7px;
+	float: left;
+	border-right: 1px solid #ccc;
+}
+
+#Left
+{
+	position: relative;
+	display: block;
+	width: 220px;
+	margin-left: 5px;
+	float: left;
+}
+/* ------------Main end --------------*/
+
+
+.post_time
+{
+	position: relative;
+	left: 430px;
+	color: rgb(120,120,120);
+}
+
+.post_summary
+{
+	position: relative;
+	border-left: 1px solid #ccc;
+	padding-left: 30px;
+	margin-bottom: 50px;
+}
+
+.post_title
+{
+	position: relative;
+	border-bottom: 1px solid #ccc;
+	width: 580px;
+	left: -30px;
+	padding-left: 30px;
+	padding-bottom: 4px;
+}
+
+.post_category
+{
+	position: absolute;
+	right: 60px;
+	top: 0px;
+	font-size: 0.8em;
+	color: rgb(120,120,120);
+	/*font-weight:bold;*/
+}
+
+.post_category img
+{
+	margin-right: 5px;
+}
+
+.post_summary p  		/* summary content */
+{
+	position: relative;
+	word-break: break-all;	/* new line */
+	padding-right: 50px;
+}
+
+.post_time img
+{
+	position: relative;
+	top: 2px;
+	margin-right: 3px;
+}
+
+/* ------------post end --------------*/
+
+
+
