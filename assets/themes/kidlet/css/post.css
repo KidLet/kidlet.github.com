@@ -128,3 +128,8 @@ blockquote
 {
 	background-color: #272822;
 }
+
+.highlight pre
+{
+	margin: 0 0 9px 0;
+}
