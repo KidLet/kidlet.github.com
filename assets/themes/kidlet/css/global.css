@@ -20,6 +20,8 @@ a
 }
 a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 
+::selection {color:#fff; background:#444; text-shadow:none;}
+
 #head
 {
 	display: block;
@@ -81,6 +83,9 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	display: block;
 	padding-top: 5px;
 	border-top: 1px solid #ccc;
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #foot p
