@@ -7,7 +7,6 @@
 {
 	width: 900px;
 	min-width: 900px;
-
 }
 
 #post_head
@@ -132,4 +131,15 @@ blockquote
 {
 	margin: 0 0 9px 0;
 	border: none;
+}
+
+.ds-thread
+{
+	width: 700px;
+	margin: 10px auto 10px auto;
+}
+
+.ds-powered-by
+{
+	display: none;
 }
