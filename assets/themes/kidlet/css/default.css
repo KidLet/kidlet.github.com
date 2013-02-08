@@ -71,6 +71,9 @@
 {
 	position: relative;
 	word-break: break-all;	/* new line */
+	word-wrap:break-word;
+	white-space: pre;
+	white-space: pre-wrap;
 	padding-right: 50px;
 }
 

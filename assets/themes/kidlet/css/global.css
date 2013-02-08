@@ -109,25 +109,24 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 }
 /* ------------foot end --------------*/
 
+
 #return_top
 {
 	display: block;
 	background: url("/assets/themes/kidlet/img/return_top.png") no-repeat left top;
 	text-indent: -9999px;
+	z-index: 999;
 	width: 40px;
 	height: 40px;
-	/*opacity: 0.4;*/
 	position: fixed;
 	right: 120px;
 	bottom: 20px;
 	margin: 0;
-	line-height: 100%;
 	padding: 0;
 
-	/* ie6 hack for position:fixed */
+	 ie6 hack for position:fixed 
 	_position:absolute; 
 	_top:expression(offsetParent.scrollTop+documentElement.clientHeight-60); 
 	_left:expression(offsetParent.scrollLeft+documentElement.clientWidth-160);
 
 }
-
