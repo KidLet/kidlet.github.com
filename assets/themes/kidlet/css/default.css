@@ -1,6 +1,7 @@
 /*
 	Author: KidLet;
 	Date: 2013-1-28;
+	description: used by default.html;
 */
 
 #main
@@ -32,15 +33,6 @@
 	float: left;
 }
 /* ------------Main end --------------*/
-
-
-.post_time
-{
-	display: inline;
-	position: relative;
-	left: 345px;
-	color: rgb(120,120,120);
-}
 
 .post_summary
 {
@@ -80,6 +72,12 @@
 	position: relative;
 	word-break: break-all;	/* new line */
 	padding-right: 50px;
+}
+
+.post_time
+{
+	margin-left: 345px;
+	color: rgb(120,120,120);
 }
 
 .post_time img

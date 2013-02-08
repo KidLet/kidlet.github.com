@@ -9,7 +9,10 @@ body
 	margin: 0 auto;
 	width: 900px;
 	min-width: 900px;
-/*	line-height: 1.35em;*/
+
+	/* ie6 hack for position:fixed*/
+	_background-attachment:fixed; 
+	_background-image:url(about:blank);
 }
 
 h1,h2,h3,h4 {color: black}
@@ -21,6 +24,17 @@ a
 a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 
 ::selection {color:#fff; background:#444; text-shadow:none;}
+
+@font-face {
+    font-family: 'monaco';
+    src: url('/assets/themes/kidlet/font/monaco-webfont.eot');
+    src: url('/assets/themes/kidlet/font/monaco-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/themes/kidlet/font/monaco-webfont.woff') format('woff'),
+         url('/assets/themes/kidlet/font/monaco-webfont.ttf') format('truetype'),
+         url('/assets/themes/kidlet/font/monaco-webfont.svg#monacoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 #head
 {
@@ -109,5 +123,11 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	margin: 0;
 	line-height: 100%;
 	padding: 0;
+
+	/* ie6 hack for position:fixed */
+	_position:absolute; 
+	_top:expression(offsetParent.scrollTop+documentElement.clientHeight-60); 
+	_left:expression(offsetParent.scrollLeft+documentElement.clientWidth-160);
+
 }
 
