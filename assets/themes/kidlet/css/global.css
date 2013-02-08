@@ -9,7 +9,7 @@ body
 	margin: 0 auto;
 	width: 900px;
 	min-width: 900px;
-	line-height: 1.35em;
+/*	line-height: 1.35em;*/
 }
 
 h1,h2,h3,h4 {color: black}
@@ -104,7 +104,7 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	height: 40px;
 	/*opacity: 0.4;*/
 	position: fixed;
-	right: 20px;
+	right: 120px;
 	bottom: 20px;
 	margin: 0;
 	line-height: 100%;
