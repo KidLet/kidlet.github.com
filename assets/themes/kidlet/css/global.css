@@ -119,12 +119,12 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	width: 40px;
 	height: 40px;
 	position: fixed;
-	bottom: 20px;
+	bottom: 40px;
 	margin-left: 860px;
 	padding: 0;
 
 /*	 ie6 hack for position:fixed */
 	_position:absolute; 
-	_top:expression(offsetParent.scrollTop+documentElement.clientHeight-60); 
+	_top:expression(offsetParent.scrollTop+documentElement.clientHeight-80); 
 
 }
