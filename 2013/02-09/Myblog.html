@@ -1,0 +1,161 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="KidLet" />
+    
+    
+    <title>关于我的博客</title>
+    <link href="/assets/themes/kidlet/css/global.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/assets/themes/kidlet/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top');</script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+      <div id="head">
+
+        <div id="logo">
+          <a href="/"><img src="/assets/themes/kidlet/img/logo.png"  alt="KidLet" /></a>
+        </div>
+        
+        <div id="nav">
+          <ul id="menu" >
+            <li><a href="/">首页</a></li>
+            <li><a href="/archive.html">文章</a></li>
+            <li><a href="#">关于</a></li>
+          </ul> 
+        </div>
+
+      </div> <!-- head end -->
+      
+      <div id="content">
+        <div id="post_head">
+          <h1>关于我的博客</h1>
+        </div>
+        <div id="post_content">
+          <p>这个博客是基于 Jekyll 搭建的，并且托管在Github， 目的是 发一些平时学到知识，多写些文字会对原来的理解，进一步加深。同时也可以锻炼下前端方面的知识。</p>
+
+<h2>兼容性</h2>
+
+<p>前端最担心就是 浏览器之间的兼容性问题，往往在Firefox， Chrome 上看起来非常精致的网页，放到 IE 上就会变得一塌糊涂。 不过好在 这个博客内容相对比较简单，而且用的是比较标准的 XHTML1.0 和 CSS2 （极小部分使用了CSS3） 兼容性问题处理起来还不太费力。</p>
+
+<h3>目前在以下浏览器测试通过</h3>
+
+<ol>
+<li>IE 6</li>
+<li>IE 7</li>
+<li>IE 8</li>
+<li>Chrome 24</li>
+<li>Firefox 18</li>
+</ol>
+
+
+<p>待测试浏览器：IE 9, IE 10, Safari。</p>
+
+<h3>出现的兼容性问题</h3>
+
+<h4>1. &lt;a> &lt;img></h4>
+
+<p>问题出现在 IE 6 到 IE 8
+当 &lt;a> 标签里面 嵌入 &lt;img> 标签后， IE 会自动 给图片加上 2px宽边框</p>
+
+<h4>2. position: fixed</h4>
+
+<p>IE 6 不支持 CSS 的 position: fixed 属性
+这里是用于 “回到顶部” 功能。</p>
+
+<h4>3. png 背景透明</h4>
+
+<p>IE 6 使用 png 时候， 透明的位置会用灰白色的方块替换，影响美观。</p>
+
+<h2>主体框架</h2>
+
+<h3>Jekyll</h3>
+
+<p>Jekyll 是一个非常棒的 静态博客， 采用了 Markdown 等方式来写博文， 并且采用 Liquid模板系统， 所以具有很高的定制性。</p>
+
+<p>这里我主要写了 两个模板 default.html 和 post.html
+以及 自己修改了 Jekyll-bootstrap 的一些内置函数以适应 我的博客。</p>
+
+<pre><code>.
+|-- _layouts
+|   |-- default.html
+|   |-- post.html
+|-- _posts
+|-- index.md
+|-- archive.html
+|-- assets
+    |-- css
+        |-- default.css
+        |-- global.css
+        |-- post.css
+        |-- pygments.css
+   |-- img
+   |-- js
+   |-- font
+</code></pre>
+
+<h2>待完成任务</h2>
+
+<ol>
+<li>回到顶部动画效果</li>
+<li>完善代码注释信息</li>
+<li>添加首页分页功能</li>
+<li>编写 “关于” 页面</li>
+<li>Safari， Opera， IE10,  IE9 浏览器兼容性测试</li>
+<li>添加博文摘要导航</li>
+<li>添加图片友好显示效果</li>
+<li>前端优化 （非必要）</li>
+</ol>
+
+
+<h2>博客开发历程</h2>
+
+<p>2013-1-27 用 Evolus Pencil 创建 博客主页原型</p>
+
+<p>2013-1-28 开始编写 主页 相应模板 和 CSS</p>
+
+<p>2013-2-06 粗略勾画 博文页面原型</p>
+
+<p>2013-2-07 大体完成 博文页面 模板</p>
+
+<p>2013-2-08 进行测试和完善 Markdown 显示， 针对IE 进行CSS完善</p>
+
+<p>2013-2-09 博客基本完工，发表第一篇博文</p>
+
+        </div>
+
+        <a id="return_top" href="#">return top</a>
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"kidlet"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+      </div> <!-- content end -->
+
+      <div id="foot">
+        <p> Design by KidLet ©2013. Powered by Jekyll </p>
+      </div>
+
+  </body>
+
+</html>
