@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-02-10T15:38:01+08:00</updated>
+ <updated>2013-02-10T15:39:14+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -90,6 +90,7 @@
 &lt;li&gt;添加博文摘要导航&lt;/li&gt;
 &lt;li&gt;添加图片友好显示效果&lt;/li&gt;
 &lt;li&gt;前端优化 （非必要）&lt;/li&gt;
+&lt;li&gt;SEO 优化&lt;/li&gt;
 &lt;/ol&gt;
 
 
