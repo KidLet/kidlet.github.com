@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-02-10T15:39:14+08:00</updated>
+ <updated>2013-02-10T23:58:37+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -26,15 +26,14 @@
 &lt;h3&gt;目前在以下浏览器测试通过&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;IE 6&lt;/li&gt;
-&lt;li&gt;IE 7&lt;/li&gt;
 &lt;li&gt;IE 8&lt;/li&gt;
 &lt;li&gt;Chrome 24&lt;/li&gt;
 &lt;li&gt;Firefox 18&lt;/li&gt;
 &lt;/ol&gt;
 
 
-&lt;p&gt;待测试浏览器：IE 9, IE 10, Safari。&lt;/p&gt;
+&lt;p&gt;待测试浏览器：IE 9, IE 10, Safari。
+仍出现问题浏览器： IE 6, IE 7&lt;/p&gt;
 
 &lt;h3&gt;出现的兼容性问题&lt;/h3&gt;
 
@@ -51,6 +50,10 @@
 &lt;h4&gt;3. png 背景透明&lt;/h4&gt;
 
 &lt;p&gt;IE 6 使用 png 时候， 透明的位置会用灰白色的方块替换，影响美观。&lt;/p&gt;
+
+&lt;h4&gt;4.IE 6, 7 排版问题&lt;/h4&gt;
+
+&lt;p&gt;初步是怀疑 对 Min-width 的解析问题&lt;/p&gt;
 
 &lt;h2&gt;主体框架&lt;/h2&gt;
 
@@ -91,6 +94,7 @@
 &lt;li&gt;添加图片友好显示效果&lt;/li&gt;
 &lt;li&gt;前端优化 （非必要）&lt;/li&gt;
 &lt;li&gt;SEO 优化&lt;/li&gt;
+&lt;li&gt; fix IE 6 “回到顶部”&lt;/li&gt;
 &lt;/ol&gt;
 
 

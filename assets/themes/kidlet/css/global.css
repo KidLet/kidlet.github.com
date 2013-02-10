@@ -122,9 +122,6 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	bottom: 40px;
 	margin-left: 860px;
 	padding: 0;
-
-/*	 ie6 hack for position:fixed */
-	_position:absolute; 
-	_top:expression(offsetParent.scrollTop+documentElement.clientHeight-80); 
-
+	_position: absolute;
+	_width: 0;
 }
