@@ -7,4 +7,5 @@ http://kidlet.github.com/pages.html
 http://kidlet.github.com/atom.xml
 http://kidlet.github.com/tags.html
 
+http://kidlet.github.com/2013/02-10/test.html
 http://kidlet.github.com/2013/02-09/Myblog.html

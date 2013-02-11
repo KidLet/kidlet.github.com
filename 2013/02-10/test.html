@@ -1,0 +1,123 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="KidLet" />
+    
+    
+    <title>test</title>
+    <link href="/assets/themes/kidlet/css/global.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/assets/themes/kidlet/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top');</script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+      <div id="head">
+
+        <div id="logo">
+          <a href="/"><img src="/assets/themes/kidlet/img/logo.png"  alt="KidLet" /></a>
+        </div>
+        
+        <div id="nav">
+          <ul id="menu" >
+            <li><a href="/">首页</a></li>
+            <li><a href="/archive.html">文章</a></li>
+            <li><a href="#">关于</a></li>
+          </ul> 
+        </div>
+
+      </div> <!-- head end -->
+      
+      <div id="content">
+        <div id="post_head">
+          <h1>test</h1>
+        </div>
+        <div id="post_content">
+          
+
+<div class="highlight"><pre><code class="cpp"><span class="cm">/**</span>
+<span class="cm">* We are both SCNU CSers and programmers,</span>
+<span class="cm">* so I write some code to ask for forgiveness</span>
+<span class="cm">* I love you.</span>
+<span class="cm">*/</span>
+<span class="cp">#include &lt;Hedgehog&gt;</span>
+<span class="cp">#include &lt;Kidlet&gt;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">love</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span> <span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">Kidlet</span> <span class="n">i</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Kidlet</span><span class="p">();</span>
+   <span class="n">Hedgehog</span> <span class="n">u</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hedgehog</span><span class="p">();</span>
+   <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="n">date</span><span class="o">==</span><span class="s">&quot;2012-4-15&quot;</span> <span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">i</span><span class="p">.</span><span class="n">love</span> <span class="p">(</span><span class="n">u</span><span class="p">);</span>
+         <span class="n">u</span><span class="p">.</span><span class="n">accepted</span> <span class="p">(</span><span class="n">i</span><span class="p">);</span>
+         <span class="n">Kidhog</span> <span class="n">we</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">u</span><span class="p">;</span> 
+      <span class="p">}</span>
+      <span class="c1">// day by day</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="n">date</span><span class="o">==</span><span class="s">&quot;2012-4-25&quot;</span> <span class="p">)</span>
+         <span class="n">we</span><span class="p">.</span><span class="n">kiss</span> <span class="p">();</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">date</span><span class="o">==</span><span class="s">&quot;2013-2-08&quot;</span><span class="p">)</span>
+         <span class="n">we</span><span class="p">.</span><span class="n">days</span> <span class="o">==</span> <span class="mi">300</span><span class="p">;</span>   <span class="c1">// TRUE</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">date</span><span class="o">==</span><span class="s">&quot;2013-2-11&quot;</span><span class="p">)</span>
+      <span class="p">{</span>
+         <span class="n">u</span><span class="p">.</span><span class="n">set</span> <span class="p">(</span> <span class="n">we</span><span class="p">.</span><span class="n">baby</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;huangyou&quot;</span><span class="p">);</span>
+
+         <span class="c1">//and then, but...</span>
+         <span class="n">u</span><span class="p">.</span><span class="n">set</span> <span class="p">(</span> <span class="n">we</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">);</span>
+         <span class="c1">//so .. i</span>
+         <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">31</span><span class="p">)</span>
+            <span class="n">i</span><span class="p">.</span><span class="n">set</span> <span class="p">(</span> <span class="n">we</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="n">u</span> <span class="p">);</span>
+
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">date</span><span class="o">==</span><span class="s">&quot;2013-2-14&quot;</span><span class="p">)</span>
+         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Happy Valentine&#39;s Day&quot;</span><span class="p">);</span>
+         
+      <span class="n">i</span><span class="p">.</span><span class="n">miss</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="c1">// every fetch-and-execute cycle</span>
+      <span class="n">i</span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">return</span> <span class="mi">520</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+        </div>
+
+        <a id="return_top" href="#">return top</a>
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"kidlet"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+      </div> <!-- content end -->
+
+      <div id="foot">
+        <p> Design by KidLet ©2013. Powered by Jekyll </p>
+      </div>
+
+  </body>
+
+</html>
