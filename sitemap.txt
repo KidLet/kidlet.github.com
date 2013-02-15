@@ -7,4 +7,6 @@ http://kidlet.github.com/pages.html
 http://kidlet.github.com/atom.xml
 http://kidlet.github.com/tags.html
 
+http://kidlet.github.com/2013/02-12/Types.html
+http://kidlet.github.com/2013/02-12/LexicalStructure.html
 http://kidlet.github.com/2013/02-09/Myblog.html

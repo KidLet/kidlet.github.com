@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="KidLet" />
+    
+    
+    <title>JavaScript学习笔记 （2）类型，值，变量</title>
+    <link href="/assets/themes/kidlet/css/global.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/assets/themes/kidlet/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top');</script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+      <div id="head">
+
+        <div id="logo">
+          <a href="/"><img src="/assets/themes/kidlet/img/logo.png"  alt="KidLet" /></a>
+        </div>
+        
+        <div id="nav">
+          <ul id="menu" >
+            <li><a href="/">首页</a></li>
+            <li><a href="/archive.html">文章</a></li>
+            <li><a href="#">关于</a></li>
+          </ul> 
+        </div>
+
+      </div> <!-- head end -->
+      
+      <div id="content">
+        <div id="post_head">
+          <h1>JavaScript学习笔记 （2）类型，值，变量</h1>
+        </div>
+        <div id="post_content">
+          <p>计算机通过操作“值”（value）来进行工作， 例如 数字3.14, 文本“Hello World”。可以被计算和进行操作的“值”的种类叫类型（type）。</p>
+
+<p>当计算机需要保留一个值便于以后使用， 值可以被 赋值（或者说存储）到“变量”（variable）中。变量定义了它的名字，并且可以通过名字来操作它所存储的值。</p>
+
+<p>JavaScript 类型可以分为两大类：自有类型（primitive types）， 对象类型（object types）</p>
+
+<p>1.自有类型包括：数字，字符串，布尔值。</p>
+
+<p>2.对象类型：除了自有类型剩下的就是对象类型，主要有，数组，函数，正则表达式，自定义对象等。</p>
+
+<h2>数字 （Numbers）</h2>
+
+<p>与其他语编程言不同的是， JavaScript并没有区分 整数和浮点数， 所有的数字在JavaScript中都是用64位浮点的方式保存的，采用IEEE 754标准。 值得注意的是， 在数组的索引（下标）和位运算的操作符的整数是采用32位整数表示的。</p>
+
+<p>直接出现在 JavaScript代码中的数字 叫做 数值文字（numeric literal）。</p>
+
+<h3>整数表示</h3>
+
+<p>对于要表示十进制整数，可以在代码中直接编写，非常符合自然阅读习惯。</p>
+
+<p>JavaScript支持十六进制表示， 只要在前面加上 “0X” 或者 “0x”， 后面是 十六进制整数数字就可以了</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="mh">0xff</span> <span class="c1">// 15*16 + 15 = 255 (base 10)</span>
+<span class="mh">0xCAFE911</span>
+</code></pre></div>
+
+
+<p>JavaScript对以前导“0”来表示八进制数的支持不是很好，不推荐使用，并且在ECMAScript 5 中已经明确禁止了这种方法。</p>
+
+<h3>浮点数表示</h3>
+
+<p>这里的表示和 C，JAVA等类似
+下面是例子，看完例子也就明白了。</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="mf">3.14</span>
+<span class="mf">2345.789</span>
+<span class="p">.</span><span class="mi">333333333333333333</span>
+<span class="mf">6.02e23</span>     <span class="c1">// 6.02 × 10^23</span>
+<span class="mf">1.4738223</span><span class="nx">E</span><span class="o">-</span><span class="mi">32</span>    <span class="c1">// 1.4738223 × 10^−32</span>
+</code></pre></div>
+
+
+<p>当然更正规的表示如下：[digits][.digits][(E|e)[(+|-)]digits]</p>
+
+<h2>字符串</h2>
+
+<p>JavaScript字符串的定义是：一串有序的不可变的 16位Unicode值。字符串的长度是它所包含的16位Unicode字符的数量。字符串也是数组，下标也是从0开始。空字符串的长度为0。JavaScript没有特定的一种类型来表示字符，如果要表示单个字符，可以使用长度为1的字符串。</p>
+
+<h3>字符串表示</h3>
+
+<p>在代码中要表示字符串， 可以简单的用单引号（'）或者双引号（"）将文本括起来。下面是一些字符串表示的例子</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="s2">&quot;&quot;</span> <span class="c1">// The empty string: it has zero characters</span>
+<span class="s1">&#39;testing&#39;</span>
+<span class="s2">&quot;3.14&quot;</span>
+<span class="s1">&#39;name=&quot;myform&quot;&#39;</span>
+<span class="s2">&quot;Wouldn&#39;t you prefer O&#39;Reilly&#39;s book?&quot;</span>
+<span class="s2">&quot;This string\nhas two lines&quot;</span>
+<span class="s2">&quot;π is the ratio of a circle&#39;s circumference to its diameter&quot;</span>
+</code></pre></div>
+
+
+<h3>字符串转义</h3>
+
+<p>有时候要在字符串中表达一些无法输入或者会引起歧义的字符，那么常常需要借助转义符反斜杠“\”</p>
+
+<p>例如：'You\'re right, it can\'t be a quote'
+它所表示的字符串为：You're right, it can't be a quote</p>
+
+<p>可以看到反斜杠后面跟着的单引号并不是 字符串的界定符，而是一个实在的文本表示
+下面是一些转义的规则</p>
+
+<pre><code>\0 空字符 (\u0000)
+\b 空格 (\u0008)
+\t 水平制表符 (\u0009)
+\n 换行 (\u000A)
+\v 垂直制表符 (\u000B)
+\f 换页符 (\u000C)
+\r 回车符 (\u000D)
+\" 双引号 (\u0022)
+\' 单引号 (\u0027)
+\\ 反斜杠 (\u005C)
+</code></pre>
+
+        </div>
+
+        <a id="return_top" href="#">return top</a>
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"kidlet"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+      </div> <!-- content end -->
+
+      <div id="foot">
+        <p> Design by KidLet ©2013. Powered by Jekyll </p>
+      </div>
+
+  </body>
+
+</html>

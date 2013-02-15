@@ -1,0 +1,150 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="KidLet" />
+    
+    
+    <title>JavaScript学习笔记 （1）语法结构</title>
+    <link href="/assets/themes/kidlet/css/global.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/themes/kidlet/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/assets/themes/kidlet/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top');</script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+      <div id="head">
+
+        <div id="logo">
+          <a href="/"><img src="/assets/themes/kidlet/img/logo.png"  alt="KidLet" /></a>
+        </div>
+        
+        <div id="nav">
+          <ul id="menu" >
+            <li><a href="/">首页</a></li>
+            <li><a href="/archive.html">文章</a></li>
+            <li><a href="#">关于</a></li>
+          </ul> 
+        </div>
+
+      </div> <!-- head end -->
+      
+      <div id="content">
+        <div id="post_head">
+          <h1>JavaScript学习笔记 （1）语法结构</h1>
+        </div>
+        <div id="post_content">
+          <p>语法结构是 编程语言中 最基础的语法，它定义了 应该怎样编写程序，变量名字的要求，注释的界定符号等等。</p>
+
+<h2>字符集</h2>
+
+<p>JavaScript程序编写采用的是 <code>Unicode</code>字符集。</p>
+
+<h3>Unicode 换码规则</h3>
+
+<p>因为有些系统无法输入所有Unicode字符，所以定义了一种换码规则，在 JavaScript的文本表示，或者正则表达式中，以 \u 开头后面跟着 4位 16进制码 来表示任意的 16-bit Unicode码，下面是一个例子</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="s2">&quot;café&quot;</span> <span class="o">===</span> <span class="s2">&quot;caf\u00e9&quot;</span> <span class="c1">// =&gt; true</span>
+</code></pre></div>
+
+
+<h3>Unicode的常态 (Normalization)</h3>
+
+<p>Unicode允许不同的编码 来表示同样的字符
+比如 字符 “é”， 它既可以通过 \u00E9 也可以 用 \u0301 来表示，但是它在文本编辑器上看并没有什么不同。但是对JavaScript来说，“\u00E9”和“\u0301” 被认为是不同的。</p>
+
+<h2>区分大小写</h2>
+
+<p>JavaScript是 <strong>区分大小写</strong> 的语言。也就是说，关键字，变量名，函数名和其他标志符等等大小写是被认为不同的。</p>
+
+<p>值得注意的是，在HTML中，是不区分大小写的（XHTML则除外），但是在JavaScript中这些必须被写成小写的。</p>
+
+<blockquote><p>比如在HTML 的 <code>onclick</code> 事件,有时候会被写成 <code>onClick</code></p>
+
+<p>但是在JavaScript中必须写为 <code>onclick</code> 才能生效</p></blockquote>
+
+<h2>注释</h2>
+
+<p>注释是用来对代码进行解释说明，并且会被编译器（解释器）所忽略的部分。JavaScript 有两种风格的注释，并且和 C语言 的一样。</p>
+
+<pre><code>// 这是一行注释
+以 // 开头到行的末尾 构成注释
+
+/*
+这也是注释
+可以是多行
+*/
+
+以 /* 开始 ， 以 */ 结束的内容会被当成注释
+注意， 不可以嵌套。 
+</code></pre>
+
+<h2>标识符和保留字</h2>
+
+<h3>标识符</h3>
+
+<p>标识符：一个简单名字，用来给变量、函数等命名。
+开头必须是，下划线（_），$符号, 英文字母
+剩下的部分 可以是 下划线（_），$符号, 英文字母， 数字</p>
+
+<h3>保留字</h3>
+
+<p>JavaScript自己保留了许多标识符作为它自己的 关键字，所以不能将这些保留字作为 自己程序的标识符。
+现在并不需要去背诵记住， 但是要有个大概的了解。</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="k">break</span>   <span class="k">delete</span>  <span class="kd">function</span>   <span class="k">return</span>   <span class="k">typeof</span>
+<span class="k">case</span>    <span class="k">do</span>      <span class="k">if</span>         <span class="k">switch</span>   <span class="kd">var</span>
+<span class="k">catch</span>   <span class="k">else</span>    <span class="k">in</span>         <span class="k">this</span>     <span class="k">void</span>
+<span class="k">continue</span>    <span class="kc">false</span>     <span class="k">instanceof</span>    <span class="k">throw</span>   <span class="k">while</span>
+<span class="kr">debugger</span>    <span class="k">finally</span>   <span class="k">new</span>           <span class="kc">true</span>    <span class="kd">with</span>
+<span class="k">default</span>     <span class="k">for</span>       <span class="kc">null</span>          <span class="k">try</span>
+</code></pre></div>
+
+
+<p>并且 JavaScript 还预先定义了许多全局变量和函数，在进行编写代码的时候应该尽量避开。</p>
+
+<blockquote><p>arguments, Array, Boolean, Date, decodeURI, decodeURIComponent, encodeURI, encodeURIComponent, Error, eval, EvalError, Function, Infinity, isFinite, isNaN, JSON, Math, NaN, Number, Object, parseFloat, parseInt, RangeError, ReferenceError, RegExp, String, SyntaxError, TypeError, undefined, URIError</p></blockquote>
+
+<h2>可选的分号</h2>
+
+<p>如果学过C语言， 一定会对分号“;”的作用非常了解。它通常被用来说明语句的结束。在JavaScript中， 可以省略分号，前提是在不引起歧义的情况下。但是我个人推荐不省略分号，因为那是一个好习惯， 它会让你的代码看起来更整洁。</p>
+
+<h2>小结</h2>
+
+<p>从本节中， 可以发现JavaScript的很多特性与C语言保持一致。</p>
+
+        </div>
+
+        <a id="return_top" href="#">return top</a>
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"kidlet"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+      </div> <!-- content end -->
+
+      <div id="foot">
+        <p> Design by KidLet ©2013. Powered by Jekyll </p>
+      </div>
+
+  </body>
+
+</html>

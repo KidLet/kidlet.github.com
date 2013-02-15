@@ -4,13 +4,190 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-02-11T18:39:46+08:00</updated>
+ <updated>2013-02-15T14:11:05+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
    <email>kidlets@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>JavaScript学习笔记 （2）类型，值，变量</title>
+   <link href="http://kidlet.github.com/2013/02-12/Types.html"/>
+   <updated>2013-02-12T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/02-12/Types</id>
+   <content type="html">&lt;p&gt;计算机通过操作“值”（value）来进行工作， 例如 数字3.14, 文本“Hello World”。可以被计算和进行操作的“值”的种类叫类型（type）。&lt;/p&gt;
+
+&lt;p&gt;当计算机需要保留一个值便于以后使用， 值可以被 赋值（或者说存储）到“变量”（variable）中。变量定义了它的名字，并且可以通过名字来操作它所存储的值。&lt;/p&gt;
+
+&lt;p&gt;JavaScript 类型可以分为两大类：自有类型（primitive types）， 对象类型（object types）&lt;/p&gt;
+
+&lt;p&gt;1.自有类型包括：数字，字符串，布尔值。&lt;/p&gt;
+
+&lt;p&gt;2.对象类型：除了自有类型剩下的就是对象类型，主要有，数组，函数，正则表达式，自定义对象等。&lt;/p&gt;
+
+&lt;h2&gt;数字 （Numbers）&lt;/h2&gt;
+
+&lt;p&gt;与其他语编程言不同的是， JavaScript并没有区分 整数和浮点数， 所有的数字在JavaScript中都是用64位浮点的方式保存的，采用IEEE 754标准。 值得注意的是， 在数组的索引（下标）和位运算的操作符的整数是采用32位整数表示的。&lt;/p&gt;
+
+&lt;p&gt;直接出现在 JavaScript代码中的数字 叫做 数值文字（numeric literal）。&lt;/p&gt;
+
+&lt;h3&gt;整数表示&lt;/h3&gt;
+
+&lt;p&gt;对于要表示十进制整数，可以在代码中直接编写，非常符合自然阅读习惯。&lt;/p&gt;
+
+&lt;p&gt;JavaScript支持十六进制表示， 只要在前面加上 “0X” 或者 “0x”， 后面是 十六进制整数数字就可以了&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;mh&quot;&gt;0xff&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 15*16 + 15 = 255 (base 10)&lt;/span&gt;
+&lt;span class=&quot;mh&quot;&gt;0xCAFE911&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;JavaScript对以前导“0”来表示八进制数的支持不是很好，不推荐使用，并且在ECMAScript 5 中已经明确禁止了这种方法。&lt;/p&gt;
+
+&lt;h3&gt;浮点数表示&lt;/h3&gt;
+
+&lt;p&gt;这里的表示和 C，JAVA等类似
+下面是例子，看完例子也就明白了。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;2345.789&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;333333333333333333&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;6.02e23&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// 6.02 × 10^23&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;1.4738223&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 1.4738223 × 10^−32&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;当然更正规的表示如下：[digits][.digits][(E|e)[(+|-)]digits]&lt;/p&gt;
+
+&lt;h2&gt;字符串&lt;/h2&gt;
+
+&lt;p&gt;JavaScript字符串的定义是：一串有序的不可变的 16位Unicode值。字符串的长度是它所包含的16位Unicode字符的数量。字符串也是数组，下标也是从0开始。空字符串的长度为0。JavaScript没有特定的一种类型来表示字符，如果要表示单个字符，可以使用长度为1的字符串。&lt;/p&gt;
+
+&lt;h3&gt;字符串表示&lt;/h3&gt;
+
+&lt;p&gt;在代码中要表示字符串， 可以简单的用单引号（'）或者双引号（&quot;）将文本括起来。下面是一些字符串表示的例子&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// The empty string: it has zero characters&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;testing&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;3.14&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;name=&amp;quot;myform&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;Wouldn&amp;#39;t you prefer O&amp;#39;Reilly&amp;#39;s book?&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;This string\nhas two lines&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;π is the ratio of a circle&amp;#39;s circumference to its diameter&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;字符串转义&lt;/h3&gt;
+
+&lt;p&gt;有时候要在字符串中表达一些无法输入或者会引起歧义的字符，那么常常需要借助转义符反斜杠“\”&lt;/p&gt;
+
+&lt;p&gt;例如：'You\'re right, it can\'t be a quote'
+它所表示的字符串为：You're right, it can't be a quote&lt;/p&gt;
+
+&lt;p&gt;可以看到反斜杠后面跟着的单引号并不是 字符串的界定符，而是一个实在的文本表示
+下面是一些转义的规则&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\0 空字符 (\u0000)
+\b 空格 (\u0008)
+\t 水平制表符 (\u0009)
+\n 换行 (\u000A)
+\v 垂直制表符 (\u000B)
+\f 换页符 (\u000C)
+\r 回车符 (\u000D)
+\&quot; 双引号 (\u0022)
+\' 单引号 (\u0027)
+\\ 反斜杠 (\u005C)
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript学习笔记 （1）语法结构</title>
+   <link href="http://kidlet.github.com/2013/02-12/LexicalStructure.html"/>
+   <updated>2013-02-12T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/02-12/LexicalStructure</id>
+   <content type="html">&lt;p&gt;语法结构是 编程语言中 最基础的语法，它定义了 应该怎样编写程序，变量名字的要求，注释的界定符号等等。&lt;/p&gt;
+
+&lt;h2&gt;字符集&lt;/h2&gt;
+
+&lt;p&gt;JavaScript程序编写采用的是 &lt;code&gt;Unicode&lt;/code&gt;字符集。&lt;/p&gt;
+
+&lt;h3&gt;Unicode 换码规则&lt;/h3&gt;
+
+&lt;p&gt;因为有些系统无法输入所有Unicode字符，所以定义了一种换码规则，在 JavaScript的文本表示，或者正则表达式中，以 \u 开头后面跟着 4位 16进制码 来表示任意的 16-bit Unicode码，下面是一个例子&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;café&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;caf\u00e9&amp;quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Unicode的常态 (Normalization)&lt;/h3&gt;
+
+&lt;p&gt;Unicode允许不同的编码 来表示同样的字符
+比如 字符 “é”， 它既可以通过 \u00E9 也可以 用 \u0301 来表示，但是它在文本编辑器上看并没有什么不同。但是对JavaScript来说，“\u00E9”和“\u0301” 被认为是不同的。&lt;/p&gt;
+
+&lt;h2&gt;区分大小写&lt;/h2&gt;
+
+&lt;p&gt;JavaScript是 &lt;strong&gt;区分大小写&lt;/strong&gt; 的语言。也就是说，关键字，变量名，函数名和其他标志符等等大小写是被认为不同的。&lt;/p&gt;
+
+&lt;p&gt;值得注意的是，在HTML中，是不区分大小写的（XHTML则除外），但是在JavaScript中这些必须被写成小写的。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;比如在HTML 的 &lt;code&gt;onclick&lt;/code&gt; 事件,有时候会被写成 &lt;code&gt;onClick&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;但是在JavaScript中必须写为 &lt;code&gt;onclick&lt;/code&gt; 才能生效&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h2&gt;注释&lt;/h2&gt;
+
+&lt;p&gt;注释是用来对代码进行解释说明，并且会被编译器（解释器）所忽略的部分。JavaScript 有两种风格的注释，并且和 C语言 的一样。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 这是一行注释
+以 // 开头到行的末尾 构成注释
+
+/*
+这也是注释
+可以是多行
+*/
+
+以 /* 开始 ， 以 */ 结束的内容会被当成注释
+注意， 不可以嵌套。 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;标识符和保留字&lt;/h2&gt;
+
+&lt;h3&gt;标识符&lt;/h3&gt;
+
+&lt;p&gt;标识符：一个简单名字，用来给变量、函数等命名。
+开头必须是，下划线（_），$符号, 英文字母
+剩下的部分 可以是 下划线（_），$符号, 英文字母， 数字&lt;/p&gt;
+
+&lt;h3&gt;保留字&lt;/h3&gt;
+
+&lt;p&gt;JavaScript自己保留了许多标识符作为它自己的 关键字，所以不能将这些保留字作为 自己程序的标识符。
+现在并不需要去背诵记住， 但是要有个大概的了解。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;    &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;debugger&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;           &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;    &lt;span class=&quot;kd&quot;&gt;with&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;       &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;          &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;并且 JavaScript 还预先定义了许多全局变量和函数，在进行编写代码的时候应该尽量避开。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;arguments, Array, Boolean, Date, decodeURI, decodeURIComponent, encodeURI, encodeURIComponent, Error, eval, EvalError, Function, Infinity, isFinite, isNaN, JSON, Math, NaN, Number, Object, parseFloat, parseInt, RangeError, ReferenceError, RegExp, String, SyntaxError, TypeError, undefined, URIError&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h2&gt;可选的分号&lt;/h2&gt;
+
+&lt;p&gt;如果学过C语言， 一定会对分号“;”的作用非常了解。它通常被用来说明语句的结束。在JavaScript中， 可以省略分号，前提是在不引起歧义的情况下。但是我个人推荐不省略分号，因为那是一个好习惯， 它会让你的代码看起来更整洁。&lt;/p&gt;
+
+&lt;h2&gt;小结&lt;/h2&gt;
+
+&lt;p&gt;从本节中， 可以发现JavaScript的很多特性与C语言保持一致。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>关于我的博客</title>
@@ -112,6 +289,8 @@
 &lt;p&gt;2013-2-08 进行测试和完善 Markdown 显示， 针对IE 进行CSS完善&lt;/p&gt;
 
 &lt;p&gt;2013-2-09 博客基本完工，发表第一篇博文&lt;/p&gt;
+
+&lt;p&gt;2013-2-12 调节了首页博文标题从h2改h3， 博客通过 IE9, Opera 测试&lt;/p&gt;
 </content>
  </entry>
  
