@@ -125,6 +125,143 @@
 \\ 反斜杠 (\u005C)
 </code></pre>
 
+<h3>简单使用字符串</h3>
+
+<p>JavaScript有个特性是可以随意地连接（concatenate）字符串， 利用 “+” 操作符。当 “+” 用在数值类型时，代表将两个数相加。而在字符串运算时，代表将两个字符串连接在一起。</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="s2">&quot;world&quot;</span><span class="p">;</span> <span class="c1">// Produces the string &quot;Hello, world&quot;</span>
+<span class="nx">greeting</span> <span class="o">=</span> <span class="s2">&quot;Welcome to my blog,&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>要获取某个字符串的长度可以用 <code>length</code> 属性</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">name</span><span class="o">=</span><span class="s2">&quot;kidlet&quot;</span><span class="p">;</span>
+<span class="nx">name</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>    <span class="c1">// 6</span>
+</code></pre></div>
+
+
+<p>下面是一些基本使用</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&quot;hello, world&quot;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//返回第一个字符</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//返回最后一个字符</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>    <span class="c1">//返回从 第二个字符到第四个字符形成的子串</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">)</span>      <span class="c1">//返回第一次出现“l”的位置</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">)</span>  <span class="c1">//返回最后一次出现“l”的位置</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1">//返回从第三个字符开始第一次出现“l”的位置</span>
+</code></pre></div>
+
+
+<h3>正则表达式</h3>
+
+<p>脚本语言基本上都有个特点是 支持正则表达式，用于匹配、替换文本等等。在很大程度上简化程序。
+在JavaScript中可以利用， RegExp() 来创建RegExp对象，它的正则表达式语法与Perl保持一致</p>
+
+<p>下面是一个例子：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">&quot;testing: 1, 2, 3&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/\d+/g</span>    <span class="c1">//匹配任意的数字</span>
+<span class="nx">pattern</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>      <span class="c1">//true， 存在匹配</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)</span>    <span class="c1">//9,第一个匹配所在的位置</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)</span>     <span class="c1">//[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]，所有匹配的数组结果</span>
+<span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span> <span class="s2">&quot;#&quot;</span><span class="p">);</span> <span class="c1">//&quot;testing: #, #, #&quot;，将所有匹配成功的数字替换为 #</span>
+</code></pre></div>
+
+
+<h2>布尔值 （Boolean Values）</h2>
+
+<p>一个布尔值代表着 真或者假，开或者关，对或者错。对于布尔类型来说，只存在两个值，它们分别被用保留字 <br/>
+<code>true</code> 和 <code>false</code> 来表示。</p>
+
+<p>布尔值通常都被用来作为比较返回的结果</p>
+
+<p>以下的的值都可以被转换为 false</p>
+
+<pre><code>undefined
+null
+0
+-0
+NaN
+"" // 空串
+</code></pre>
+
+<p>除此以外的其他值均可以转换为 true</p>
+
+<p>布尔值有一个 toString() 方法，可以将布尔值转为 “true” 或者 “false”字符串</p>
+
+<p>并且还有三个运算符可以进行布尔值运算，分别是 &amp;&amp;运算符 代表布尔与运算， ||运算符 代表布尔或运算</p>
+
+<p>!运算符 代表布尔非运算</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">((</span><span class="nx">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="p">(</span><span class="nx">z</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+<span class="c1">// x 和 y 都是0 或者 z 不是0</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h2>null 和 undefined</h2>
+
+<p>null是一个关键字，用来表示缺少值，空值的意思。同时也表示一个特殊对象值“no object”。它的含义类似其他语言中的null或者ruby中的nil。</p>
+
+<p>JavaScript还有另外一个特殊值用来表示更深层含义的 “值不存在” -- undefined</p>
+
+<p><code>undefined</code>有两种含义：</p>
+
+<ol>
+<li>变量的值未初始化</li>
+<li>对象的属性不存在或者数组的元素不存在</li>
+<li>函数没有返回值</li>
+<li>没有为函数的参数（parameter）提供实参（argument）</li>
+</ol>
+
+
+<p>null和undefined被 == 运算符认为是一样的
+但是可以使用 === （strict equality operator）来区分他们</p>
+
+<h3>null 和 undefined 的理解</h3>
+
+<p>可以理解null表示是 程序级别的（program-level），正常的，预期的缺少值。</p>
+
+<p>undefined表示的是 系统级别的（system-level），异常的，错误的缺少值。</p>
+
+<p>如果需要传递参数，赋值一个“缺少值”的含义等操作，选择null通常是正确选择。</p>
+
+<h2>变量 （Variable）</h2>
+
+<p>在使用一个变量的时候，需要先声明（declare）它，变量的声明采用关键字 <code>var</code>，下面是例子：</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">sum</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>也可以同时声明多个变量，通过逗号分隔开(,)</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">sum</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>在声明变量的时候，同时也可以为变量初始化，就像下面这样。</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>如果不为变量初始化，那么默认变量为<code>undefined</code></p>
+
+<p>JavaScript声明变量的时候无需指出变量的类型，因为JavaScript变量可以容纳任意类型的值</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">i</span> <span class="o">=</span> <span class="s2">&quot;ten&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+
+
+
         </div>
 
         <a id="return_top" href="#">return top</a>
