@@ -1,5 +1,6 @@
 
 http://kidlet.github.com/archive.html
+http://kidlet.github.com/doing.html
 http://kidlet.github.com/index.html
 http://kidlet.github.com/sitemap.txt
 http://kidlet.github.com/categories.html
