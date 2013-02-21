@@ -4,6 +4,7 @@
 */
 body
 {
+	position:relative;
 	background-color: rgb(255,255,255);
 	font-family: monaco, consolas, monospace, "Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
 	margin: 0 auto;
@@ -39,14 +40,14 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 #head
 {
 	display: block;
-	width: 900px;
+	position: relative;
 	height: 115px;
-	min-width: 900px;
+
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 0;
 	margin-bottom: 20px;
-	position: relative;
+	
 	border-bottom: 1px solid #ccc;
 }
 
@@ -54,8 +55,9 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 {
 	position: absolute;
 	top: 80px;
-	right: 25px;
+	right: 35px;
 }
+
 
 #logo
 {
@@ -77,15 +79,23 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 
 #menu li
 {
-	padding-right:30px; 
+	
 	float:left;
 }
 
 #menu li a 
 {
+	padding-right:15px; 
+	padding-left: 15px;
 	font-size: 21px;
 	font-weight: bold;
 	/*border-bottom: 1px dashed rgb(167,61,41);*/
+}
+
+#menu li a:hover
+{
+	padding-bottom: 3px;
+	border-bottom: 3px solid #FF9900;
 }
 
 /* ------------head end --------------*/
@@ -100,6 +110,7 @@ a:hover {color: rgb(165,26,0)}	/* 鼠标移动到链接上 */
 	margin-top: 15px;
 	margin-left: auto;
 	margin-right: auto;
+	width: 900px;
 }
 
 #foot p
