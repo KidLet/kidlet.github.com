@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-02-21T20:47:47+08:00</updated>
+ <updated>2013-02-22T12:41:06+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -13,13 +13,51 @@
 
  
  <entry>
-   <title>JavaScript学习笔记 （2）类型，值，变量</title>
+   <title>JavaScript学习笔记 （3）变量</title>
+   <link href="http://kidlet.github.com/2013/02-22/variable.html"/>
+   <updated>2013-02-22T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/02-22/variable</id>
+   <content type="html">&lt;p&gt;当计算机需要保留一个值便于以后使用， 值可以被 赋值（或者说存储）到“变量”（variable）中。变量定义了它的名字，并且可以通过名字来操作它所存储的值。&lt;/p&gt;
+
+&lt;h2&gt;变量声明 （declare）&lt;/h2&gt;
+
+&lt;p&gt;在使用一个变量的时候，需要先声明（declare）它，变量的声明采用关键字 &lt;code&gt;var&lt;/code&gt;，下面是例子：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;也可以同时声明多个变量，通过逗号分隔开(,)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在声明变量的时候，同时也可以为变量初始化，就像下面这样。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果不为变量初始化，那么默认变量为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript声明变量的时候无需指出变量的类型，因为JavaScript变量可以容纳任意类型的值&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ten&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript学习笔记 （2）类型和值</title>
    <link href="http://kidlet.github.com/2013/02-12/Types.html"/>
    <updated>2013-02-12T00:00:00+08:00</updated>
    <id>http://kidlet.github.com/2013/02-12/Types</id>
    <content type="html">&lt;p&gt;计算机通过操作“值”（value）来进行工作， 例如 数字3.14, 文本“Hello World”。可以被计算和进行操作的“值”的种类叫类型（type）。&lt;/p&gt;
-
-&lt;p&gt;当计算机需要保留一个值便于以后使用， 值可以被 赋值（或者说存储）到“变量”（variable）中。变量定义了它的名字，并且可以通过名字来操作它所存储的值。&lt;/p&gt;
 
 &lt;p&gt;JavaScript 类型可以分为两大类：自有类型（primitive types）， 对象类型（object types）&lt;/p&gt;
 
