@@ -1,52 +1,49 @@
 
-<!DOCTYPE html
-PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="KidLet" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
     
-    
-      <meta name="keywords" content="JavaScript, js, javascript权威指南" />
-    
-    <title>JavaScript学习笔记 （1）语法结构</title>
-    <link href="/assets/themes/kidlet/css/global.css" type="text/css" rel="stylesheet" />
-    <link href="/assets/themes/kidlet/css/post.css" type="text/css" rel="stylesheet" />
-    <link href="/assets/themes/kidlet/css/pygments.css" type="text/css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="keywords" content="JavaScript, js, javascript权威指南" />
+    <title>JavaScript学习笔记 （1）语法结构</title> 
     <!--[if IE 6]>
-    <script type="text/javascript" src="/assets/themes/kidlet/js/DD_belatedPNG_0.0.8a-min.js"></script>
-    <script type="text/javascript">DD_belatedPNG.fix('#return_top');</script>
-    <![endif]-->
-    <script type="text/javascript" src="/assets/themes/kidlet/js/base.js"></script>
+    <script type="text/javascript" src="/assets/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top, img, #logo');</script>
+    <![endif]--> 
+    <link href="/assets/css/base.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script type="text/javascript" src="/assets/js/jquery-1.9.1.min.js"></script>
   </head>
-
   <body>
+    <div id="top"></div>
+    <header>
+      <div id="header-wrap">
+        <a id="logo" href="/">KidLet</a>
+        <nav>
+          <a href="/">首页</a>
+          <a href="/">文章</a>
+          <a href="/">关于</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="clear"></div>
 
-      <div id="head">
-
-        <div id="logo">
-          <a href="/"><img src="/assets/themes/kidlet/img/logo.png"  alt="KidLet" /></a>
-        </div>
+    <div id="wrap">
+      <div id="type-wrap">
         
-        <div id="nav">
-          <ul id="menu" >
-            <li><a href="/">首页</a></li>
-            <li><a href="/archive.html">文章</a></li>
-            <li><a href="#">关于</a></li>
-          </ul> 
-        </div>
-
-      </div> <!-- head end -->
-      
+          <h1 id="type-title">JavaScript学习笔记 （1）语法结构</h1>
+        
+      </div>
+      <div class="clear"></div>
       <div id="content">
-        <div id="post_head">
-          <h1>JavaScript学习笔记 （1）语法结构</h1>
-        </div>
-        <div id="post_content">
-          <p>语法结构是 编程语言中 最基础的语法，它定义了 应该怎样编写程序，变量名字的要求，注释的界定符号等等。</p>
+        
+        <div id="article">
+            <p>语法结构是 编程语言中 最基础的语法，它定义了 应该怎样编写程序，变量名字的要求，注释的界定符号等等。</p>
 
 <h2>字符集</h2>
 
@@ -127,29 +124,17 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
         </div>
 
-        <a id="return_top">return top</a>
+        <div id="Left">
+        </div>
 
-        <!-- Duoshuo Comment BEGIN -->
-        <div class="ds-thread"></div>
-        <script type="text/javascript">
-        var duoshuoQuery = {short_name:"kidlet"};
-        (function() {
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';ds.async = true;
-          ds.src = 'http://static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] 
-          || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-        </script>
-        <!-- Duoshuo Comment END -->
-
-      </div> <!-- content end -->
-
-      <div id="foot">
-        <p> Design by KidLet ©2013. Powered by Jekyll </p>
-        <script src="http://s14.cnzz.com/stat.php?id=5036420&web_id=5036420" language="JavaScript"></script>
       </div>
+
+
+      <footer>
+        <p id="foot">Design by KidLet ©2013. Powered by Jekyll</p>
+      </footer>
+    </div>
+
 
   </body>
 

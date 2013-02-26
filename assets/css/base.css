@@ -1,0 +1,169 @@
+/*
+Author: KidLet;
+  Date: 2013-2-24;
+
+provide base css style  
+*/
+
+/* CSS Reset */
+body,div,h1,h2,h3,h4,h5,pre,p,blockquote,code
+{
+	margin: 0;
+	padding: 0;
+	border:0;
+}
+ul {margin-left: 20px;}
+h1,h2,h3,h4 {margin: 10px;}
+h1 {font-size: 30px;font-weight: bold;}
+h2 {font-size: 26px;font-weight: bold;}
+h3 {font-size: 20px;font-weight: bold;}
+h4 {font-size: 16px;font-weight: bold;}
+header,footer,section,aside,nav,hgroup,figure,figcaption{display:block;margin:0;padding:0;border: none;}
+
+.w960 {width: 960px}
+.clear {clear: both}
+a {text-decoration: none; color: rgb(216, 107, 86);}
+a:hover {color: rgb(85, 85, 85);}
+body
+{
+	font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+	background: rgb(251,251,251);
+	color: #333;
+}
+
+/* Top Border */
+#top
+{
+	height: 7px;
+	min-width: 960px; 
+	background: url('/assets/img/bg.png') repeat;
+}
+
+header
+{
+/*	width: 860px;*/
+	margin: 0 auto 0 auto;
+/*	padding-left: 40px;*/
+	background: white;
+	position: relative;
+}
+
+#header-wrap
+{
+	position: relative;
+	width: 860px;
+	margin: 0 auto 0 auto;
+	padding-left: 40px;
+}
+
+
+#logo 
+{
+	display: block;
+	width: 280px;
+	height: 79px;
+	margin: 0;
+	margin-right: 0px;
+	float: left;
+	background: url('/assets/img/logo.png') no-repeat;
+	text-indent: -999em;
+}
+
+#header-wrap nav
+{
+	position: relative;
+	float: right;
+	right: 140px;
+	border-right: 1px solid #ebebeb;
+}
+
+#header-wrap nav a
+{
+	display: block;
+	float: left;
+	height: 80px;
+	padding: 0 30px;
+	font-size: 20px;
+	font-weight: bold;
+	border-left: 1px solid #ebebeb;
+	line-height: 80px;
+	outline: 0;
+}
+
+/* header end */
+
+#wrap
+{
+	min-width: 960px;
+	background: url('/assets/img/bg.png') repeat;
+	padding: 0;
+	margin: 0 auto 0 auto;
+	
+}
+
+
+#type-title
+{
+	float: left;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+	margin: 30px 0 10px 0;
+}
+
+#type-wrap
+{
+	margin: 0 auto 0 auto;
+	padding-left: 48px;
+	position: relative;
+	width: 860px;
+}
+
+/* type end */
+
+#content
+{
+	position: relative;
+	width: 900px;
+	_height: 500px;
+	min-height: 500px;
+	margin: 20px auto;
+	padding-top: 20px;
+	padding-left: 30px;
+	border-radius: 5px;
+	background: rgb(251,251,251);
+/*	-webkit-box-shadow: #AAA 0 5px 10px;
+	box-shadow: #AAA 0 5px 10px;
+	-moz-box-shadow: #AAA 0 5px 10px;*/
+}
+
+/* content end*/
+
+
+
+#foot
+{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	color: rgb(184, 178, 178);
+	letter-spacing: 1px;
+}
+
+/* scroll bar */
+::-webkit-scrollbar-button 
+{
+	display: none;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: rgb(251,251,251);
+}
+::-webkit-scrollbar-thumb 
+{
+	border-radius: 8px;
+	background: #999;
+}

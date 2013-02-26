@@ -1,0 +1,152 @@
+/*
+Author: KidLet;
+  Date: 2013-2-26;
+
+provide the page of post style  
+*/
+
+#article
+{
+	padding: 20px 20px 20px 30px;
+	line-height: 1.75em;
+/*	width: 600px;*/
+}
+
+#article h1
+{
+	margin: 20px 10px 20px -25px;
+	font-size: 26px;
+	font-weight: normal;
+	color: white;
+	background-color: rgb(4, 109, 139);
+	padding: 10px 20px 10px 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#article h2
+{
+	font-size: 18px;
+	font-weight: normal;
+	background-color: rgb(252, 243, 218);
+	padding: 7px 15px;
+	margin: 10px 30px 10px -20px;
+	color: rgb(51, 51, 51);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+pre 
+{
+	display: block;
+	padding: 15.5px;
+	margin: 0 5px 9px 5px;
+	font-size: 12.025px;
+	line-height: 25px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+code
+{
+	font-family: Monaco,monospace,Menlo,Consolas,"Courier New",;
+	font-size:12px;
+	padding:2px 4px;
+	color:#d14;
+	background-color:#f7f7f9;
+	border:1px solid #e1e1e8;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+pre code
+{
+	font-size: 17px;
+	background-color: rgb(251,251,251);
+	border: 0;
+	color: rgb(151, 20, 53);
+	padding: 0;
+}
+
+blockquote:after
+{
+	content: '"';
+	font-style: italic;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: left;
+	line-height: 60px;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	bottom: 15px;
+	right: 20px;
+	color: rgb(167,61,41);
+}
+
+blockquote:before 
+{
+	content: '"';
+	font-style: italic;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 40px;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: rgb(167,61,41);
+}
+
+blockquote 
+{
+	margin: 0 0 1em 0;
+	padding: 40px;
+	background: rgb(251,251,251);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	position: relative;
+	border: 1px solid #ccc;
+}
+
+.highlight
+{
+	margin: 5px;
+	margin-right: 20px;
+	background-color: #272822;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.highlight pre code
+{
+	background-color: #272822;
+}
+
+.highlight pre
+{
+	margin: 0 0 9px 0;
+	border: none;
+}
+
+.ds-thread
+{
+	width: 700px;
+	margin: 10px auto 10px auto;
+}
+
+.ds-powered-by
+{
+	display: none;
+}

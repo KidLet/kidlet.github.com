@@ -101,8 +101,7 @@ kid.DOMReady = [init] ;
 
 function init () 
 {
-	kid.bind (window,'scroll', Scrolling );
-	kid.bind (return_top, 'click', returnTop );
+
 }
 
 function Scrolling ()		// catch the event of scroll in window
@@ -113,7 +112,7 @@ function Scrolling ()		// catch the event of scroll in window
 	if ( Top>100 )
 		kid.$("return_top").style.display="block";
 	else
-		kid.$("return_top").style.display="none";
+		kid.$("return_top").style.display="block";
 
 	if (window.ActiveXObject) 		//judge ms ie
 	{

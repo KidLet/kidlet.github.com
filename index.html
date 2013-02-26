@@ -1,117 +1,127 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
     <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="KidLet" />
     <meta http-equiv="Content-Language" content="zh-cn" />
     
     
-    <title>KidLet's Blog  | Keep elegant.</title> 
+    <title>KidLet's Blog -Keep elegant.</title> 
     <!--[if IE 6]>
-    <script type="text/javascript" src="/assets/themes/kidlet/js/DD_belatedPNG_0.0.8a-min.js"></script>
-    <script type="text/javascript">DD_belatedPNG.fix('#return_top, img');</script>
+    <script type="text/javascript" src="/assets/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top, img, #logo');</script>
     <![endif]--> 
-    <link href="/assets/themes/kidlet/css/global.css" type="text/css" rel="stylesheet" />
-    <link href="/assets/themes/kidlet/css/default.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/base.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/default.css" type="text/css" rel="stylesheet" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <script type="text/javascript" src="/assets/themes/kidlet/js/base.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-1.9.1.min.js"></script>
   </head>
   <body>
+    <div id="top"></div>
+    <header>
+      <div id="header-wrap">
+        <a id="logo" href="/">KidLet</a>
+        <nav>
+          <a href="/">首页</a>
+          <a href="/archive.html">文章</a>
+          <a href="#">关于</a>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="clear"></div>
 
-      <div id="head">
-
-        <div id="logo">
-          <a href="/"><img src="/assets/themes/kidlet/img/logo.png"  alt="KidLet" /></a>
-        </div>
+    <div id="wrap">
+      <div id="type-wrap">
         
-        <div id="nav">
-          <ul id="menu" >
-            <li><a href="/">首页</a></li>
-            <li><a href="/archive.html">文章</a></li>
-            <li><a href="#">关于</a></li>
-          </ul>
-          
-        </div>
-
-      </div> <!-- head end -->
-      
-
-      <div id="main">
-
-        <div id="content">
-          
+          <h1 id="type-title">首页</h1>
+        
+      </div>
+      <div class="clear"></div>
+      <div id="content">
+        
+<div class="post_index">
+	<div class="post_summary">
+		<div class="post_title">
+			<h3 class="post_title-name"><a href="/2013/02-22/variable.html">JavaScript学习笔记 （3）变量</a></h3>
+			<div class="post_time"><img src="/assets/img/time.png" alt="Date:" />2013-02-22</div>
+			<div class="post_category"> <img src="/assets/img/category.png" alt="Category:" />JavaScript</div>
+		</div>
+		
+		<p>跟随 JavaScript The Definitive Guide 的脚步， 一起来学习前端利器：<code>Javascript</code>.<br />本节讲述的是JavaScript中的变量相关的内容。</p>
+		
+		<a class="post_summary-readmore" href="/2013/02-22/variable.html">阅读全文 »</a>
+		
+	</div>
+</div>
 
 <div class="post_index">
-    <div class="post_summary">
-        <h3 class="post_title"><a href="/2013/02-22/variable.html">JavaScript学习笔记 （3）变量</a></h3>
-        <span class="post_category"> <img src="assets/themes/kidlet/img/category.png" alt="Category:" />JavaScript</span>
-        
-        <p>跟随 JavaScript The Definitive Guide 的脚步， 一起来学习前端利器：<code>Javascript</code>.<br />本节讲述的是JavaScript中的变量相关的内容。</p>
-        
-        <a href="/2013/02-22/variable.html">阅读全文 »</a>
-        <span class="post_time"><img src="assets/themes/kidlet/img/time.png" alt="Date:" />2013.02.22</span>
-    </div>
+	<div class="post_summary">
+		<div class="post_title">
+			<h3 class="post_title-name"><a href="/2013/02-12/Types.html">JavaScript学习笔记 （2）类型和值</a></h3>
+			<div class="post_time"><img src="/assets/img/time.png" alt="Date:" />2013-02-12</div>
+			<div class="post_category"> <img src="/assets/img/category.png" alt="Category:" />JavaScript</div>
+		</div>
+		
+		<p>跟随 JavaScript The Definitive Guide 的脚步， 一起来学习前端利器：<code>Javascript</code>.<br />本节讲述的是JavaScript中的与类型，值有关的知识。</p>
+		
+		<a class="post_summary-readmore" href="/2013/02-12/Types.html">阅读全文 »</a>
+		
+	</div>
 </div>
 
 
+<!-- Pagination links -->
 
 
-<div class="post_index">
-    <div class="post_summary">
-        <h3 class="post_title"><a href="/2013/02-12/Types.html">JavaScript学习笔记 （2）类型和值</a></h3>
-        <span class="post_category"> <img src="assets/themes/kidlet/img/category.png" alt="Category:" />JavaScript</span>
-        
-        <p>跟随 JavaScript The Definitive Guide 的脚步， 一起来学习前端利器：<code>Javascript</code>.<br />本节讲述的是JavaScript中的与类型，值有关的知识。</p>
-        
-        <a href="/2013/02-12/Types.html">阅读全文 »</a>
-        <span class="post_time"><img src="assets/themes/kidlet/img/time.png" alt="Date:" />2013.02.12</span>
-    </div>
+<div id="post-pagination" class="pagination">
+
+  <ul class="pages">
+
+	
+
+	
+		
+		<li class="page-current">
+			
+			<a href="/">1</a>
+			
+		</li>
+		
+	
+		
+		<li>
+			
+			<a href="/page2">2</a>
+			
+		</li>
+		
+	
+
+	
+		<li><a href="/page2">»</a></li>
+	
+  </ul>
+
 </div>
 
 
-
-
-<div class="post_index">
-    <div class="post_summary">
-        <h3 class="post_title"><a href="/2013/02-12/LexicalStructure.html">JavaScript学习笔记 （1）语法结构</a></h3>
-        <span class="post_category"> <img src="assets/themes/kidlet/img/category.png" alt="Category:" />JavaScript</span>
-        
-        <p>跟随 JavaScript The Definitive Guide 的脚步， 一起来学习前端利器：<code>Javascript</code>.<br />本节讲述的是JavaScript基础的语法结构。</p>
-        
-        <a href="/2013/02-12/LexicalStructure.html">阅读全文 »</a>
-        <span class="post_time"><img src="assets/themes/kidlet/img/time.png" alt="Date:" />2013.02.12</span>
-    </div>
-</div>
-
-
-
-
-<div class="post_index">
-    <div class="post_summary">
-        <h3 class="post_title"><a href="/2013/02-09/Myblog.html">关于我的博客</a></h3>
-        <span class="post_category"> <img src="assets/themes/kidlet/img/category.png" alt="Category:" />Web前端</span>
-        
-        <p>赶在了大年二十九，把博客给基本完工了。欢迎大家多多访问。 <br />基于<code>Jekyll</code>搭建，用自己写的模板（<code>XHTML+CSS</code>）<br /><br />新年快乐！</p>
-        
-        <a href="/2013/02-09/Myblog.html">阅读全文 »</a>
-        <span class="post_time"><img src="assets/themes/kidlet/img/time.png" alt="Date:" />2013.02.09</span>
-    </div>
-</div>
-
-
-
-
-        </div>
 
         <div id="Left">
+          <div id="aboutme" class="Border">
+            <div id="mypic"></div>
+            <p id="aboutme-name">羊仔</p>
+            <p>微博：<a href="http://weibo.com/kidlets">@_羊仔</a></p>
+            <p>邮箱：kidlets#qq.com</p>
+            <p>爱好：计算机，羽毛球</p>
+          </div>
 
-          <div id="catalogues">
+          <div id="category" class="Border">
             <h3>文章分类</h3>
             <ul>
-                  
                 
+              
 
 
   
@@ -130,26 +140,26 @@
             </ul>
           </div>
 
-          <div id="links">
+          <div id="links" class="Border">
             <h3>推荐链接</h3>
             <ul>
-                <li><a href="/doing.html">我的学习历程</a></li>
+              <li>
+                <a href="/doing.html">我的学习历程</a>
+              </li>
             </ul>
           </div>
 
-        </div> <!-- Left end -->
+        </div>
 
-      </div> <!-- main end -->
-      
-      <p><a id="return_top">return top</a></p>
-      
-
-
-      <div id="foot">
-        <p> Design by KidLet ©2013. Powered by Jekyll </p>
-       <!-- <script src="http://s14.cnzz.com/stat.php?id=5036420&web_id=5036420" language="JavaScript"></script> -->
       </div>
-      
+
+
+      <footer>
+        <p id="foot">Design by KidLet ©2013. Powered by Jekyll</p>
+      </footer>
+    </div>
+
+
   </body>
 
 </html>

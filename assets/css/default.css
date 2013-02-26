@@ -1,0 +1,179 @@
+/*
+Author: KidLet;
+  Date: 2013-2-25;
+
+provide default template
+*/
+
+.post_index
+{
+	width: 600px;
+	border-bottom: 1px solid rgb(221, 219, 214);
+	padding-bottom: 20px;
+	color: #333;
+	margin-bottom: 20px;
+	margin-left: 15px;
+}
+
+.post_title
+{
+	border-left: 5px solid rgb(167,61,41);;
+	border-radius: 5px;
+	padding-left: 10px;
+	margin-bottom: 15px;
+}
+
+.post_time
+{
+	color: rgb(85, 85, 85);
+	font-size: 12px;
+}
+
+.post_time img
+{
+	margin-right: 5px;
+}
+
+.post_category
+{
+	color: rgb(85, 85, 85);
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.post_category img
+{
+	margin-right: 10px;
+}
+
+.post_summary p
+{
+	margin-left: 15px;
+	line-height: 1.4em;
+}
+
+.post_summary-readmore
+{
+	display: block;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.post_title-name
+{
+	font-weight: normal;
+	font-size: 20px;
+	margin-left: 0;
+	margin-bottom: 7px;
+	line-height: 1em;
+}
+
+
+#Left
+{
+	position: absolute;
+	right: 30px;
+	top: 0px;
+}
+
+.Border
+{
+	width: 180px;
+	margin: 20px 0;
+	padding: 10px 20px;
+	background: #f8f8f8;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 4px #888;
+	-moz-box-shadow: 0 1px 4px #888;
+	box-shadow: 0 1px 4px #888;
+	
+}
+
+#aboutme
+{
+	position: relative;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+#mypic
+{
+	position:relative; 
+	zoom:1;
+	width: 90px;
+	height: 90px;
+	margin: -70px auto 10px auto;
+	background: url('/assets/img/me.jpg') no-repeat;
+	box-shadow: 0px 1px 5px #888;
+	border-radius: 50px;
+	border: 5px solid #fff;
+	z-index: 3;
+}
+
+#aboutme-name
+{
+	margin-top: -8px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#category h3,#links h3
+{
+	font-weight: bold;
+	font-size: 16px;
+	margin: 0;
+}
+
+#category ul,#links ul
+{
+	padding-left: 20px;
+	margin-top: 10px;
+}
+
+#category li,#links li
+{
+	margin-bottom: 6px;
+}
+
+
+
+/* pages number */
+#post-pagination .pages li
+{
+	position: relative;
+	float: left;
+	margin-right: 5px;
+	min-width: 20px;
+	left: 28px;
+}
+#post-pagination .pages
+{
+	padding-left: 500px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#post-pagination .pages li a
+{
+	display: block;
+	min-width: 20px;
+	_width: 20px;
+	padding: 5px 3px;
+	border-radius: 5px;
+/*	background: rgb(216, 107, 86);*/
+	text-align: center;
+	color: #333;
+}
+
+#post-pagination .pages .page-current a
+{
+	background: rgb(243, 168, 154);
+}
+
+
+#post-pagination .pages a:hover
+{
+	background: rgb(216, 107, 86);
+}
