@@ -35,6 +35,7 @@ body
 #top
 {
 	height: 7px;
+	_height: 0px;
 	min-width: 960px; 
 	background: #242528;
 }
