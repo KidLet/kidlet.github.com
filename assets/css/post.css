@@ -38,6 +38,8 @@ provide the page of post style
 	border-radius: 5px;
 }
 
+#article ul {margin-left: 0;padding-left: 20px;}
+#article ol {padding-left: 25px;}
 pre 
 {
 	display: block;

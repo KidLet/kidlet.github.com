@@ -6,8 +6,12 @@ provide base css style
 */
 
 /* CSS Reset */
+
+
+
 body,div,h1,h2,h3,h4,h5,pre,p,blockquote,code
 {
+
 	margin: 0;
 	padding: 0;
 	border:0;
@@ -19,6 +23,8 @@ h2 {font-size: 26px;font-weight: bold;}
 h3 {font-size: 20px;font-weight: bold;}
 h4 {font-size: 16px;font-weight: bold;}
 header,footer,section,aside,nav,hgroup,figure,figcaption{display:block;margin:0;padding:0;border: none;}
+
+
 
 .w960 {width: 960px}
 .clear {clear: both}
@@ -91,6 +97,9 @@ header
 	outline: 0;
 }
 
+#header-nav a:hover{background: rgb(235,235,235);}
+
+
 /* header end */
 
 #wrap
@@ -126,12 +135,13 @@ header
 #content
 {
 	position: relative;
-	width: 900px;
+	width: 880px;
 	_height: 500px;
 	min-height: 500px;
 	margin: 20px auto;
 	padding-top: 20px;
 	padding-left: 30px;
+	padding: 20px 30px;
 	border-radius: 5px;
 	background: rgb(251,251,251);
 /*	-webkit-box-shadow: #AAA 0 5px 10px;
@@ -153,18 +163,22 @@ header
 }
 
 /* scroll bar */
-::-webkit-scrollbar-button 
-{
-	display: none;
-}
-
 ::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
 	background: rgb(251,251,251);
 }
+
 ::-webkit-scrollbar-thumb 
 {
 	border-radius: 8px;
 	background: #999;
 }
+
+::-webkit-scrollbar-button 
+{
+	display: none;
+}
+
+
+
