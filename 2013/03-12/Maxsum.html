@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="KidLet" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    
+    <meta name="keywords" content="algorithm, max sum, 最大连续子数组和，dp, 动态规划, acm" />
+    <title>Max Sum --经典动态规划问题</title> 
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/assets/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top, img, #logo');</script>
+    <![endif]--> 
+    <link href="/assets/css/base.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="top"></div>
+    <header>
+      <div id="header-wrap">
+        <a id="logo" href="/">KidLet</a>
+        <div id="header-nav">
+          <a href="/">首页</a>
+          <a href="/archive.html">文章</a>
+          <a href="/aboutme.html">关于</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="clear"></div>
+
+    <div id="wrap">
+      <div id="type-wrap">
+        
+          <h1 id="type-title">Max Sum --经典动态规划问题</h1>
+        
+      </div>
+      <div class="clear"></div>
+      <div id="content">
+        
+        <div id="article">
+            <h1>问题描述</h1>
+
+<p>给定一个整数数组A，要求得其中所有连续子数组中的最大和值
+例如数组A为 [6, -1, 5, 4, -7]</p>
+
+<p>所求结果应该为：子数组 sum( [6, -1, 5, 4] ) = 14</p>
+
+<h1>枚举法</h1>
+
+<p>拿到题目， 首先一般第一想法是 穷举所有可能的子数组，并且求得其和值，从中选取最大的值即为所求。</p>
+
+<p>那么你的代码可能会像下面这样
+( 这里假设数据均为有效数据，即A!=NULL，且数组A长度至少为1,且计算过程中不会溢出 )</p>
+
+<div class="highlight"><pre><code class="c++"><span class="kt">int</span> <span class="n">MaxSum</span> <span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>    <span class="c1">//hold the answer, and regard A[0] as the answer firstly</span>
+    <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">sum</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">start</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span> <span class="n">start</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="n">start</span><span class="p">;</span> <span class="n">end</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span> <span class="n">end</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// calculate the sum of sub-array [start, start+1, ..., end]</span>
+            <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">start</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="n">A</span> <span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">)</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>时间复杂度 O （n<sup>3</sup>）, n为数组长度</p>
+
+<h3>优化后的 穷举法</h3>
+
+<p>仔细想想， 发现上面的做法其实还可以做得更好，不过那样需要多花费些空间，典型的空间换时间。借助前缀和，可以减少使用 最内层的循环，这是求数组“部分和”经常使用的方法，虽然简单，却往往特有奇效。</p>
+
+<p>这里 我们定义了一个数组 sum[N], 对于数组中某个数 sum[i]其值为A[0]+A[1]+...+A[i-1]的值</p>
+
+<p>通常这种数组叫做前缀和， 我们需要花费 O（n）的时间去维护，然后就可以在O（1）的时间内算出数组A中任意一个子数组的和</p>
+
+<blockquote><p>例如我们要计算 子数组从 [start,...,end] 的和
+那么我们只需要： sum[end+1]-sum[start] 多么神奇，原先需要一个for循环才能做到的事情，现在只需一个减法。</p></blockquote>
+
+<div class="highlight"><pre><code class="c++"><span class="kt">int</span> <span class="n">MaxSum</span> <span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>    <span class="c1">//hold the answer, and regard A[0] as the answer firstly</span>
+    <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
+    
+    <span class="kt">int</span> <span class="n">sum</span> <span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="c1">// sum [i] means the sum of array [0,1,2,...,i-1]</span>
+    <span class="n">sum</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">sum</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">start</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span> <span class="n">start</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="n">start</span><span class="p">;</span> <span class="n">end</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span> <span class="n">end</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sum</span><span class="p">[</span><span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">sum</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">)</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span>
+            <span class="c1">// calculate the sum of sub-array [start, start+1, ..., end]</span>
+
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>时间复杂度 O （n<sup>2</sup>）, 空间复杂度 O(n)</p>
+
+<h1>动态规划</h1>
+
+<p>上面的穷举法已经基本上没有优化空间， 这时候就得转向其他方面去考虑。下面来见识下动态规划的魅力吧。</p>
+
+<p>动态规划重点在于子问题的定义，对于这个问题，开始可能会想定义 d(i)为 数组A[0..i]这个子问题的解，但是很快发现这是行不通的，或者说比较冗余的，因为不好确定 d(i)和d(i+1)之间的联系。</p>
+
+<p>这里我们定义 d(i)表示 <strong>子数组 A[0..i] 对于这个问题的解</strong>。那么可以得到这样的递推式</p>
+
+<pre><code>         d(i-1) + A[i]  ( d(i-1)+A[i] &gt;= A[i] )
+d(i) =
+         A[i]           ( d(i-1)+A[i] &lt;  A[i] )
+</code></pre>
+
+<p>如何理解呢？ 假设我们已经知道 d(i-1)， 那么要求d(i)有两种情况</p>
+
+<ol>
+<li>A[i]这个值与上一段d(i-1)连在一起成为d(i)的解</li>
+<li>A[i]这个值足够大，另起炉灶，单独成为d(i-1)的解</li>
+</ol>
+
+
+<p>(未完待续)</p>
+
+        </div>
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"kidlet"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+      </div>
+
+
+      <footer>
+        <p id="foot">Design by KidLet ©2013. Powered by Jekyll</p>
+      </footer>
+    </div>
+
+
+  </body>
+
+</html>

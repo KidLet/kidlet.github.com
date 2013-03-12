@@ -10,4 +10,5 @@ http://kidlet.github.com/atom.xml
 http://kidlet.github.com/index.html
 http://kidlet.github.com/tags.html
 
+http://kidlet.github.com/2013/03-12/Maxsum.html
 http://kidlet.github.com/2013/02-09/Myblog.html
