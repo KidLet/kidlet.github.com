@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-03-12T18:42:43+08:00</updated>
+ <updated>2013-03-12T19:31:43+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Max Sum --经典动态规划问题</title>
+   <title>Max Sum 经典动态规划问题</title>
    <link href="http://kidlet.github.com/2013/03-12/Maxsum.html"/>
    <updated>2013-03-12T00:00:00+08:00</updated>
    <id>http://kidlet.github.com/2013/03-12/Maxsum</id>
@@ -106,6 +106,10 @@ d(i) =
 &lt;li&gt;A[i]这个值足够大，另起炉灶，单独成为d(i-1)的解&lt;/li&gt;
 &lt;/ol&gt;
 
+
+&lt;hr /&gt;
+
+&lt;p&gt;如果你想测试你的程序是否正确可以 &lt;a href=&quot;http://acm.hdu.edu.cn/showproblem.php?pid=1003&quot;&gt;点这里&lt;/a&gt; 答题&lt;/p&gt;
 
 &lt;p&gt;(未完待续)&lt;/p&gt;
 </content>
