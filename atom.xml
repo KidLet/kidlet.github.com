@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-03-12T19:31:43+08:00</updated>
+ <updated>2013-03-13T14:02:06+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Max Sum 经典动态规划问题</title>
+   <title>Max Sum —经典动态规划问题</title>
    <link href="http://kidlet.github.com/2013/03-12/Maxsum.html"/>
    <updated>2013-03-12T00:00:00+08:00</updated>
    <id>http://kidlet.github.com/2013/03-12/Maxsum</id>
