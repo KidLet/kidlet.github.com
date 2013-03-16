@@ -4,7 +4,7 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-03-16T20:42:26+08:00</updated>
+ <updated>2013-03-16T23:57:30+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
@@ -161,7 +161,7 @@
 
 &lt;p&gt;动态规划重点在于子问题的定义，对于这个问题，开始可能会想定义 d(i)为 数组A[0..i]这个子问题的解，但是很快发现这是行不通的，或者说比较冗余的，因为不好确定 d(i)和d(i+1)之间的联系。&lt;/p&gt;
 
-&lt;p&gt;这里我们定义 d(i)表示 &lt;strong&gt;子数组 A[0..i] 对于这个问题的解&lt;/strong&gt;。那么可以得到这样的递推式&lt;/p&gt;
+&lt;p&gt;这里我们定义 d(i)表示 &lt;strong&gt;以第i个数结尾的子数组 对于这个问题的解&lt;/strong&gt;。那么可以得到这样的递推式&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;         d(i-1) + A[i]  ( d(i-1)+A[i] &amp;gt;= A[i] )
 d(i) =
