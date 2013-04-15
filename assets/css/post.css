@@ -21,9 +21,9 @@ provide the page of post style
 	color: white;
 	background-color: rgb(4, 109, 139);
 	padding: 10px 20px 10px 20px;
-	-webkit-border-radius: 5px;
+/*	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 5px;*/
 }
 
 #article h2
