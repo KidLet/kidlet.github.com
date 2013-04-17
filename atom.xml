@@ -4,13 +4,56 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-04-17T00:45:39+08:00</updated>
+ <updated>2013-04-17T15:54:16+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
    <email>kidlets@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>实习前的迷茫</title>
+   <link href="http://kidlet.github.com/2013/04-17/atSea.html"/>
+   <updated>2013-04-17T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/04-17/atSea</id>
+   <content type="html">&lt;h1&gt;我们为什么要实习&lt;/h1&gt;
+
+&lt;p&gt;也许每个人都带有不同的目的去实习的，而我最最开始的实习目的却有点让人啼笑皆非。那时候因为缺钱，想实习。现在已经过了那个坎了，所以得重新审视下实习的目的。我想大多数人实习的目的大概有一下几点吧：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;为简历加分&lt;/li&gt;
+&lt;li&gt;从实习中学习到实践更多的知识&lt;/li&gt;
+&lt;li&gt;因为别人都去实习了，跟风实习&lt;/li&gt;
+&lt;li&gt;通过实习的方式以便直接拿到offer&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h1&gt;经历&lt;/h1&gt;
+
+&lt;p&gt;在寒假的时候自学了一些前端知识，并且依靠GitHub 和 Jekyll 搭建起了自己的博客。于是最开始就投了 网易邮箱的前端开发实习生。并且很意外地收到了人生的第一个面试通知。&lt;/p&gt;
+
+&lt;p&gt;于是做了一些准备并且带了人生的第一份简历前往网易大厦面试，面试官也挺Nice的，可惜面试过程中犯了太多的错误。并没有拿到offer，当然自认为自己本身在前端方面的学习还远远不够，而且不会PhotoShop。&lt;/p&gt;
+
+&lt;p&gt;随后参加了腾讯创新班，通过了笔试，那天下午的面试面了差不多一个小时，Jeflie说其他面试官都已经面了很多人了。后来也很惊喜的收到了通知。于是参加了创新班课程，课程相对来说比较广，基本上点到为止，只能扩宽眼界。最后的实习面试也面试了很久，可是基本上是被面试官说我的不足以及其他人如何的好。记得那位面试官对我的批评是：&lt;strong&gt;没有有说哪一方面专研得非常深&lt;/strong&gt;。还有一点他完全不承认我在ACM方面的成就，他认为竞赛方面只能说明你是一个聪明人。&lt;/p&gt;
+
+&lt;p&gt;4.13参加了腾讯实习生笔试，发挥不是很好，连插入排序的填空题都写错，估计要被人笑死了吧。面试通知应该在这几天就通知了。&lt;/p&gt;
+
+&lt;h1&gt;该怎么做&lt;/h1&gt;
+
+&lt;p&gt;事实上我最想做的还是Linux后台开发而不是前端，在创新班面试结束后我就确定了我的道路是后台开发而不是前端开发。当然前端方面的知识我还是很有兴趣学习的，只是不会作为的主业而已。&lt;/p&gt;
+
+&lt;p&gt;但是Linux下后台开发其实接触还不多，距离那位面试官说的“专研得深”还有很长的一段路要走&lt;/p&gt;
+
+&lt;p&gt;一直很想买 Unix Network Programming, 哪天咬咬牙就买下来吧。&lt;/p&gt;
+
+&lt;p&gt;有时候想安下心来看书，储备知识，但是又常常被周围以及那几个实习目的给打败。花了大量时间在看实习信息、简历制作。&lt;/p&gt;
+
+&lt;p&gt;之前还有想着先去巢鹏师兄的公司实习着先，然后在继续学习。但是又想到也许进去之后根本没有空闲的时间去学习其他知识了，而且说不定变成了真正的“码农”了。&lt;/p&gt;
+
+&lt;p&gt;有时候也会担心如果稍微大一点的公司都进不了到时候怎么办呢，却又不太想屈居与小公司。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>有趣的猜数字问题 —动态规划</title>
