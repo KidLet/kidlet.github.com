@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="KidLet" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    
+    <meta name="keywords" content="JavaScript, js, nodejs, node, 微信， 微信公共" />
+    <title>利用NodeJS搭建微信公众账号</title> 
+    <!--[if IE 6]>
+    <script type="text/javascript" src="/assets/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('#return_top, img, #logo');</script>
+    <![endif]--> 
+    <link href="/assets/css/base.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/post.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/css/pygments.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="top"></div>
+    <header>
+      <div id="header-wrap">
+        <a id="logo" href="/">KidLet</a>
+        <div id="header-nav">
+          <a href="/">首页</a>
+          <a href="/archive.html">文章</a>
+          <a href="/aboutme.html">关于</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="clear"></div>
+
+    <div id="wrap">
+      <div id="type-wrap">
+        
+          <h1 id="type-title">利用NodeJS搭建微信公众账号</h1>
+        
+      </div>
+      <div class="clear"></div>
+      <div id="content">
+        
+        <div id="article">
+            <h1>NodeJS</h1>
+
+<p>随着近几年JavaScript的兴起而出现的一种借助</p>
+
+<p>之前就做好了这个应用，可以简单查询天气。但是由于服务器在国外，而微信又有5秒内未返回响应则自动断开连接的限制，导致有时候查询返回结果失败。</p>
+
+<p>昨晚稍微改进了下“用户交互”，并且尝试着如何优化来避免微信的限制。</p>
+
+<p>由于我是通过抓取“新浪天气”的信息返回给用户，抓取时间相对会长一点，开始想着能不能只抓取页面的一部分就让 request 返回。但是似乎并没有这种接口的提供。后来就尝试的可以先返回 信息的一部分，比如发送的用户、接受用户、时间。然后才开始抓取天气。等到天气抓取到后在把余下的信息返回给微信开放平台。与之前不同的是我是将所有信息准备好了才一次性返回给微信。导致会出现超时的现象。似乎改进后效果有明显改善，基本不存在查询超时的情况了。</p>
+
+<hr />
+
+<p>待续</p>
+
+        </div>
+
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"kidlet"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- Duoshuo Comment END -->
+
+      </div>
+
+
+      <footer>
+        <p id="foot">Design by KidLet ©2013. Powered by Jekyll</p>
+      </footer>
+    </div>
+
+
+  </body>
+
+</html>

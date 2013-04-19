@@ -4,13 +4,34 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-04-17T15:54:16+08:00</updated>
+ <updated>2013-04-19T10:38:07+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
    <email>kidlets@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>利用NodeJS搭建微信公众账号</title>
+   <link href="http://kidlet.github.com/2013/04-19/weatherjs.html"/>
+   <updated>2013-04-19T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/04-19/weatherjs</id>
+   <content type="html">&lt;h1&gt;NodeJS&lt;/h1&gt;
+
+&lt;p&gt;随着近几年JavaScript的兴起而出现的一种借助&lt;/p&gt;
+
+&lt;p&gt;之前就做好了这个应用，可以简单查询天气。但是由于服务器在国外，而微信又有5秒内未返回响应则自动断开连接的限制，导致有时候查询返回结果失败。&lt;/p&gt;
+
+&lt;p&gt;昨晚稍微改进了下“用户交互”，并且尝试着如何优化来避免微信的限制。&lt;/p&gt;
+
+&lt;p&gt;由于我是通过抓取“新浪天气”的信息返回给用户，抓取时间相对会长一点，开始想着能不能只抓取页面的一部分就让 request 返回。但是似乎并没有这种接口的提供。后来就尝试的可以先返回 信息的一部分，比如发送的用户、接受用户、时间。然后才开始抓取天气。等到天气抓取到后在把余下的信息返回给微信开放平台。与之前不同的是我是将所有信息准备好了才一次性返回给微信。导致会出现超时的现象。似乎改进后效果有明显改善，基本不存在查询超时的情况了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;待续&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>实习前的迷茫</title>

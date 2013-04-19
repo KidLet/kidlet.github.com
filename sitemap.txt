@@ -9,7 +9,9 @@ http://kidlet.github.com/pages.html
 http://kidlet.github.com/atom.xml
 http://kidlet.github.com/index.html
 http://kidlet.github.com/tags.html
+http://kidlet.github.com/page2/index.html
 
+http://kidlet.github.com/2013/04-19/weatherjs.html
 http://kidlet.github.com/2013/04-17/atSea.html
 http://kidlet.github.com/2013/03-16/guessnum.html
 http://kidlet.github.com/2013/03-12/Maxsum.html
