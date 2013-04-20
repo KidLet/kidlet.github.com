@@ -142,7 +142,7 @@ provide default template
 #post-pagination .pages li
 {
 	position: relative;
-	float: left;
+	display: inline;
 	margin-right: 5px;
 	min-width: 20px;
 	left: 28px;
@@ -157,7 +157,7 @@ provide default template
 
 #post-pagination .pages li a
 {
-	display: block;
+	display: inline-block;
 	min-width: 20px;
 	_width: 20px;
 	padding: 5px 3px;
