@@ -4,13 +4,36 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-04-25T09:56:46+08:00</updated>
+ <updated>2013-04-26T10:42:57+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
    <email>kidlets@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>解决Jekyll无法自动生成问题</title>
+   <link href="http://kidlet.github.com/2013/04-26/jekyllAutoregenerating.html"/>
+   <updated>2013-04-26T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/04-26/jekyllAutoregenerating</id>
+   <content type="html">&lt;p&gt;Jekyll 的自动生成功能还是很有用的，不用每次都重新执行一次 &lt;code&gt;jekyll --server&lt;/code&gt;
+通过google发现也有人和我一样的问题&lt;/p&gt;
+
+&lt;p&gt;在stack overflow 有人给出了解答
+&lt;a href=&quot;http://stackoverflow.com/questions/15591000/jekylls-auto-doesnt-work&quot;&gt;Jekyll's “--auto” doesn't work?&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo gem uninstall directory_watcher &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo gem install directory_watcher -v 1.4.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我才发现原来我装了两个版本的 directory_watcher, 其中一个是1.5的&lt;/p&gt;
+
+&lt;p&gt;于是通过&lt;code&gt;gem&lt;/code&gt;将1.5版本的 directory_watcher 删除之后Jekyll就正常了。&lt;/p&gt;
+
+&lt;p&gt;所以如果大家的 自动生成功能失效， 请注意下 directory_watcher 是否只保留了1.4.1的版本。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>利用NodeJS搭建微信公众账号</title>
