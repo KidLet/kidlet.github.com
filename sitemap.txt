@@ -11,6 +11,7 @@ http://kidlet.github.com/index.html
 http://kidlet.github.com/tags.html
 http://kidlet.github.com/page2/index.html
 
+http://kidlet.github.com/2013/05-01/vdfuse.html
 http://kidlet.github.com/2013/04-26/jekyllAutoregenerating.html
 http://kidlet.github.com/2013/04-19/weatherjs.html
 http://kidlet.github.com/2013/04-17/atSea.html

@@ -4,13 +4,44 @@
  <title>KidLet's Blog</title>
  <link href="http://kidlet.github.com/atom.xml" rel="self"/>
  <link href="http://kidlet.github.com"/>
- <updated>2013-05-01T15:01:52+08:00</updated>
+ <updated>2013-05-01T16:12:26+08:00</updated>
  <id>http://kidlet.github.com</id>
  <author>
    <name>KidLet</name>
    <email>kidlets@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>利用vdfuse读取 VirtualBox drive image(vdi)</title>
+   <link href="http://kidlet.github.com/2013/05-01/vdfuse.html"/>
+   <updated>2013-05-01T00:00:00+08:00</updated>
+   <id>http://kidlet.github.com/2013/05-01/vdfuse</id>
+   <content type="html">&lt;p&gt;首先先安装 vdfuse&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo apt-get install virtualbox-fuse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;然后 开始mount vdi文件 当然要先建好 ~/mount1 目录&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo vdfuse -f ~/file.vdi ~/mount1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;然后进入 &lt;code&gt;su&lt;/code&gt;, cd ~/mount1&lt;/p&gt;
+
+&lt;p&gt;ls后，应该会有 ‘EntireDisk', ‘Partition1' 之类的文件，记住一定要先进入 su 后才能看到，否则会提示权限出错&lt;/p&gt;
+
+&lt;p&gt;一般来说 'Partition1'就是我们想要的&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;mount ~/mount1/Partition1 ~/mount2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接着打开 ～/mount2就可以看到我们需要的文件啦&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>解决Jekyll无法自动生成问题</title>
