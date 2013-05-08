@@ -56,7 +56,7 @@
 <p>那么你的代码可能会像下面这样
 ( 这里假设数据均为有效数据，即A!=NULL，且数组A长度至少为1,且计算过程中不会溢出 )</p>
 
-<div class="highlight"><pre><code class="c++"><span class="kt">int</span> <span class="n">MaxSum</span> <span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span> <span class="p">)</span>
+<div class="highlight"><pre><code class="c++"><span class="kt">int</span> <span class="nf">MaxSum</span> <span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>    <span class="c1">//hold the answer, and regard A[0] as the answer firstly</span>
     <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">sum</span><span class="p">;</span>
@@ -88,7 +88,7 @@
 <blockquote><p>例如我们要计算 子数组从 [start,...,end] 的和
 那么我们只需要： sum[end+1]-sum[start] 多么神奇，原先需要一个for循环才能做到的事情，现在只需一个减法。</p></blockquote>
 
-<div class="highlight"><pre><code class="c++"><span class="kt">int</span> <span class="n">MaxSum</span> <span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span> <span class="p">)</span>
+<div class="highlight"><pre><code class="c++"><span class="kt">int</span> <span class="nf">MaxSum</span> <span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>    <span class="c1">//hold the answer, and regard A[0] as the answer firstly</span>
     <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
