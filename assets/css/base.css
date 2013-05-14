@@ -206,3 +206,88 @@ footer>a,.ds-powered-by
 	display: table;
 	content: "";
 }
+
+.list-content
+{
+	float: left;
+	width: 65.104166667%;
+	margin: 24px 0 0;
+}
+
+.list-content > article
+{
+	border-bottom: 2px solid #ededed;
+	margin-bottom: 72px;
+	margin-bottom: 5.142857143rem;
+	padding-bottom: 24px;
+	padding-bottom: 1.714285714rem;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+.entry-header 
+{
+	margin-bottom: 24px;
+}
+
+.entry-title
+{
+	font-size: 22px;
+	line-height: 1.2;
+	font-weight: normal;
+}
+
+.entry-content
+{
+	line-height: 1.714285714;
+}
+
+.entry-content p
+{
+	margin: 0 0 24px;
+	line-height: 1.714285714;	
+}
+
+.entry-meta
+{
+	/*margin-top: 24px;*/
+	font-size: 13px;
+	line-height: 1.846153846;
+	color: #757575;	
+}
+
+
+.list-widget-area
+{
+	float: right;
+	width: 26.041666667%;
+	margin: 1.714285714rem 0 0;
+}
+
+.list-widget-area li
+{
+	font-size: 13px;
+	line-height: 1.846153846;
+}
+
+.list-widget-area .widget a 
+{
+	color: #757575;
+	text-decoration: underline;
+}
+
+.list-widget-area .widget a:hover 
+{
+	color: #21759b;
+}
+
+.list-widget-area .widget 
+{
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+	margin-bottom: 48px;
+	word-wrap: break-word;
+}
