@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>利用NodeJS搭建微信公众账号 | KidLet</title>
+  <title>Category: programming | KidLet</title>
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/post.css">
   <link rel="stylesheet" href="/assets/css/code.css">
@@ -46,57 +46,36 @@
 
     <div class="wrapper">
   <div class="list-content">
-    <article>
-	<header class="entry-header">
-		<h1 class="entry-title">
-			利用NodeJS搭建微信公众账号
-		</h1>
+    
 
-		<div class="entry-meta">
-		2013-04-19
+
+	
+	<article>
+		<header class="entry-header">
+			<h1 class="entry-title">
+				<a href="/2013/06-03/vector.html">Vector 正确的内存释放</a>
+			</h1>
+
+			<div class="entry-meta">
+			2013-06-03
+
+			
+				programming
+			
+			</div>
+			
+		</header>
+
+		<div class="entry-content">
+			平时一直用Vector、String之类的STL容器时没有注意其内存释放问题，直到今天看到一条微博才发现自己对STL了解之少。
 		</div>
 
-	</header>
 
-	<div class="entry-content">
-		<h1>NodeJS</h1>
+	</article>
+	
+	
 
-<p>随着近几年JavaScript的兴起而出现的一种借助V8引擎使得JavaScript的执行速度非常快，从而用于服务器来处理数据。</p>
 
-<p>不同的是，NodeJS是采用非阻塞事件驱动的方式，这样可以大大的提高网络的并发量。当然这样做也会存在一定的局限性。譬如：对于每个事件处理的时间不能太长。</p>
-
-<h1>微信公共账号</h1>
-
-<p>随着微信的流行，各种商家也开始入住微信的开发平台。并且在前不久微信也正式发布了他们的开发平台。</p>
-
-<p>开发平台与我们自己服务器之间的交互是采用HTTP协议，以XML格式进行交互</p>
-
-<p>之前就做好了这个应用，可以简单查询天气。但是由于服务器在国外，而微信又有5秒内未返回响应则自动断开连接的限制，导致有时候查询返回结果失败。</p>
-
-<p>昨晚稍微改进了下“用户交互”，并且尝试着如何优化来避免微信的限制。</p>
-
-<p>由于我是通过抓取“新浪天气”的信息返回给用户，抓取时间相对会长一点，开始想着能不能只抓取页面的一部分就让 request 返回。但是似乎并没有这种接口的提供。后来就尝试的可以先返回 信息的一部分，比如发送的用户、接受用户、时间。然后才开始抓取天气。等到天气抓取到后在把余下的信息返回给微信开放平台。与之前不同的是我是将所有信息准备好了才一次性返回给微信。导致会出现超时的现象。似乎改进后效果有明显改善，基本不存在查询超时的情况了。</p>
-
-<p>这几天发现情况还是没有得到改善，看来只能尽量采用国内的服务器以避免这种情况吧。等接下来忙完实习的事情，把源码放到GitHub上。</p>
-
-	</div>
-
-	<!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"kidlet"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- Duoshuo Comment END -->
-
-</article>
   </div>
 
   <div class="list-widget-area">
