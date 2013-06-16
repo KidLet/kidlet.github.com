@@ -2,17 +2,17 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>博客新主题 | KidLet</title>
+  <title>多线程引起的“内存泄露” | KidLet</title>
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/post.css">
   <link rel="stylesheet" href="/assets/css/code.css">
   <meta name="author" content="KidLet">
   
-    <meta content="最近在网上浏览的时候，看到一些博客都用同一款主题，于是..." name="description">
+    <meta content="第一次和内存泄露做斗争，结果检查了很久居然发现问题出在多线程上。" name="description">
   
 
   
-    <meta content="jekyll, theme" name="keywords">
+    <meta content="linux, pthread, join, detach, 内存泄露, valgrind" name="keywords">
   
 
 </head>
@@ -63,41 +63,64 @@
     <article>
 	<header class="entry-header">
 		<h1 class="entry-title">
-			博客新主题
+			多线程引起的“内存泄露”
 		</h1>
 
 		<div class="entry-meta">
-		2013-05-10
+		2013-06-16
 		</div>
 
 	</header>
 
 	<div class="entry-content">
-		<p>好吧，这已经是我的博客的第三个主题了。</p>
+		<p>近日在写一个多线程的服务端程序，开始重视内存泄露问题。
+根据观察发现每个连接大概会产生4KB左右的泄露，检查很久都没能发现
+泄露的位置。后来将程序改为单线程，发现不再出现泄露问题。于是开始
+怀疑是多线程导致的。后经查阅发现是线程资源没有回收导致。</p>
 
-<p>每个主题大概只用了一个月就换了，不过之前两个都是自己瞎设计的。
-美感方面嘛，还是有些欠缺的。</p>
+<h1>线程的joinable 和 detached 状态</h1>
 
-<p>这次基本上是“抄袭” WordPress 的 Twenty Twelve 主题
-觉得这个主题很简洁，非常舒适。不过Hedgehog却说配色不好看。</p>
+<p>在Linux下，默认创建线程后，状态为 <code>joinable</code>。这样的线程终止时，其
+终止状态会保存到对该线程调用pthread_join，并且在pthread_join被调用
+之前会一直保存着其底层存储资源。这样就导致了所谓的“内存泄露”</p>
 
-<p>刚好 Jekyll 推出了 1.0版本，之前的博客都是基于Jekyll-Bootstrap项目的。
-这次就从纯Jekyll出发，整体文件结构简洁不少。也引入了评论插件。
-不过这次并没有考虑到 浏览器的兼容性问题，只在最新的<code>Chrome</code>和<code>Firefox</code>做了测试</p>
+<p>但是有时候我们并不需要获取线程的终止状态，而调用pthread_join又会导致
+阻塞，直至相应线程终止。这常常不是我们的本意。</p>
 
-<p>下面是我之前和现在博客的截图</p>
+<p>对于这种情况，我们可以调用pthread_detach使相应线程进入 <code>detached</code>状态（分离状态）
+当线程被分离时，不能再用pthread_join来等待获取它的终止状态了，此时线程结束后
+资源会被立即回收。</p>
 
-<h2>版本1：</h2>
+<blockquote><p>所以如果不需要获取线程的终止状态，那么就应该使其进入分离状态，从而
+避免不必要的资源占用。</p></blockquote>
 
-<p><img src="/images/essay/newtheme/version1.jpg" alt /></p>
+<h1>例子</h1>
 
-<h2>版本2：</h2>
+<div class="highlight"><pre><code class="c++"><span class="kt">void</span><span class="o">*</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//pthread_detach(pthread_self());</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p><img src="/images/essay/newtheme/version2.jpg" alt /></p>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">pthread_t</span> <span class="n">id</span><span class="p">;</span>
+ 
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*s&quot;</span><span class="p">);</span>
+    <span class="cm">/*</span>
+<span class="cm">    此时检查内存情况，可以发现程序占用了80M+的内存。</span>
+<span class="cm">    若将 fun 第一句注释去掉，重新运行，可以发现</span>
+<span class="cm">    几乎不占内存了。 </span>
+<span class="cm">    */</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
-<h2>版本3：</h2>
 
-<p><img src="/images/essay/newtheme/version3.jpg" alt /></p>
+<p>另外推荐下<code>Valgrind</code>真是一款强大的内存问题检测工具（不仅限于内存泄露）。</p>
 
 	</div>
 
