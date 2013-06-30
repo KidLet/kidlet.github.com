@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Makefile 学习笔记 | KidLet</title>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/post.css">
+  <link rel="stylesheet" href="/assets/css/code.css">
+  <meta name="author" content="KidLet">
+  
+    <meta content="Makefile 可以极大的减轻编译时候的工作，极大的提高工作效率，如果是在Linux下开发的话，那么掌握必要的makefile知识是很有用的。" name="description">
+  
+
+  
+    <meta content="makefile,c++,linux" name="keywords">
+  
+
+</head>
+
+<body>
+
+  <div class="site">
+
+    <header class="site-header">
+      <div class="site-header-title">
+        <h1><a href="/" title="KidLet" rel="KidLet">KidLet</a></h1>
+        <h2>享受生活，热爱编程</h2>
+      </div>
+
+    <nav class="site-nav">
+      <ul>
+        
+        <li>
+          <a href="/" title="Home">Home</a>
+        </li>
+<!--        
+        <li>
+          <a href="/doing.html">Doing</a>
+        </li>
+-->
+        <li>
+          <a href="/read.html">READ</a>
+        </li>
+
+        <li>
+          <a href="/aboutme.html">About</a>
+        </li>
+
+
+        <li class="site-nav-search">
+          <form action="http://www.google.com/cse" method="get" target="_blank" role="search">
+            <input name="q" type="text">
+            <input type="hidden" name="cx" value="006060436150686332336:5xvxsrijdyi">
+            <input type="hidden" name="ie" value="UTF-8">
+            <input type="hidden" name="siteurl" value="www.kidlet.org">
+            <input type="submit" value="搜索">
+          </form>
+        </li>
+
+      </ul>
+    </nav>
+
+    </header>
+
+    <div class="wrapper">
+  <div class="list-content">
+    <article>
+	<header class="entry-header">
+		<h1 class="entry-title">
+			Makefile 学习笔记
+		</h1>
+
+		<div class="entry-meta">
+		2013-06-30
+		</div>
+
+	</header>
+
+	<div class="entry-content">
+		<h1>Makefile 核心规则</h1>
+
+<p>其实 Makefile 的核心规则很简单，如下所示：</p>
+
+<pre><code>目标: 依赖1 依赖2 ...
+&lt;Tab&gt;命令1
+&lt;Tab&gt;命令2
+</code></pre>
+
+<p>其中“目标”一般来说是文件名，且多为目标文件（Object file）。后面的
+依赖用于指示目标所依赖的文件。意思就是说每次make程序会检查目标文件的修改
+时间和每个依赖文件的修改时间相比较。若目标文件比依赖文件旧或者不存在，那
+么就会顺序执行后面指定的命令。且命令可以为shell命令。同时一般需要将makefile文件命名为 “makefile”、“Makefile” 才能正常使用。</p>
+
+<blockquote><p>其中<Tab>表示键盘Tab键</p></blockquote>
+
+<h1>Makefile 的初使用</h1>
+
+<div class="highlight"><pre><code class="makefile"><span class="nf">main</span><span class="o">:</span> <span class="m">main.o a.o b.o</span>
+    g++ main.o a.o b.o -o main
+<span class="c"># 注释由一个 # 符号开始到一行结束</span>
+<span class="c"># 注意每个命令前面必须有 &lt;Tab&gt;</span>
+<span class="nf">main.o</span><span class="o">:</span> <span class="m">main.cpp main.h a.h b.h</span>
+    g++ -c main.cpp
+<span class="nf">a.o</span><span class="o">:</span> <span class="m">a.cpp a.h</span>
+    g++ -c a.cpp
+<span class="nf">b.o</span><span class="o">:</span> <span class="m">b.cpp b.h</span>
+    g++ -c b.cpp
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="m">clean </span><span class="c">#这一行表示 clean 为一个伪目标</span>
+<span class="m">clean:</span>
+    -rm -f *.o main
+</code></pre></div>
+
+
+<p>上面是一个普通的makefile文件，其作用是编译 <strong>a.cpp</strong> <strong>b.cpp</strong> <strong>main.cpp</strong>文件，并且最后将编译生成的目标文件全部链接为 "main"文件</p>
+
+<p>其中依赖关系如下:</p>
+
+<pre><code>a.o 依赖于a.cpp 和 a.h
+b.o 依赖于b.cpp 和 b.h
+main.o 依赖于main.cpp main.h a.h b.h
+可执行文件main 依赖于 main.o a.o b.o
+</code></pre>
+
+<p>当我们执行 <code>make</code> 的时候,将会触发第一条 make 规则,就是 main: main.o a.o b.o 这条,原因是当我们 make 不加参数时候,它会自动去寻找第一条出现的规则去执行。并且去判断是否需要去更新目标 main,同时会产生递归更新,由于 main.o 又依赖其他文件,所以会继续不断的递归判断是否需要更新,并执行相关命令。</p>
+
+<p>对于后面的.PHONY 标号是用来表明 clean 是一个<strong>伪目标</strong>,而不是一个文件,避免因为文件名也为 clean 引起的冲突,同时要想触发 clean 的命令,只需在 make 后加上参数 <code>make clean</code>。一般 makefile 都会附带上一个 clean 命令用于清理目录下的文件。</p>
+
+<p>注意到 clean 后面的命令 rm 前面多了一个 <code>-</code> 符号,由于 make 在执行 shell 命令时候会读取命令的返回值,若返回值不为 0(即出错),那么会马上停止执行。但是有时候这并不是我们想要的,当有多条命令的时候,我希望某一两条出错后,后面的命令仍应继续执行,那么就需要给命令前面加一个 <code>-</code>。</p>
+
+<h1>Makefile 中的变量</h1>
+
+<p>变量的定义有两种方法：</p>
+
+<pre><code>变量名 = 值
+变量名 := 值
+</code></pre>
+
+<p>其中右边的“值”可以是变量名，对于第一种定义的方法，如果其值为变量那么可以在后面才为其赋值，就像这样</p>
+
+<div class="highlight"><pre><code class="makefile"><span class="nv">A</span> <span class="o">=</span> <span class="k">$(</span>B<span class="k">)</span>
+<span class="nv">B</span> <span class="o">=</span> main.cpp
+</code></pre></div>
+
+
+<p>但是第二种会立即展开变量的值以避免出现递归现象</p>
+
+<div class="highlight"><pre><code class="makefile"><span class="nv">A</span> <span class="o">:=</span> <span class="k">$(</span>B<span class="k">)</span>
+<span class="nv">B</span> <span class="o">:=</span> <span class="k">$(</span>A<span class="k">)</span>
+</code></pre></div>
+
+
+<p>对于上面这种情况，A 和 B变量最后的值都为空，因为试图展开$(B)得到空，所以A为空，后面为B赋值时候将空的A赋值给B，所以二者皆空。但是如果这里用 <code>=</code>来定义，则会报错。</p>
+
+<p>从上面的例子中也可以看到变量的使用需要这样的形式 $(变量名)</p>
+
+<p>这里我来介绍几个特殊的变量，同时他们也非常的有用</p>
+
+<ol>
+<li>$@ 这个变量表示规则中的“目标”</li>
+<li>$^ 这个变量表示规则中的所有条件,以空格分割</li>
+<li>$&lt; 这个变量表示规则中的第一个条件</li>
+<li>$? 这个变量表示规则中的所有需要更新的条件,以空格分割</li>
+</ol>
+
+
+<p>对于如何记忆这几个变量,我自己也想了个方法。首先记 <code>$@</code>,从样子上看,非常像靶
+子,那么自然会想到表示“目标”
+。接着<code>$^</code>,看起来就像一座山,就是像要获得成功需要克服的困难(条件),所以表示条件,接着<code>$&amp;lt;</code>,也是一座山指向最左边,意第一个需要克服的困难(条件)
+,剩下的最后一个变量可能比较少用,但是知道前面几个,剩下这个也很容易
+记得了。</p>
+
+<p>同时 makefile 还有些缺省的变量,各自表示不同的含义:</p>
+
+<div class="highlight"><pre><code class="makefile"><span class="nf">CXX</span><span class="o">:</span><span class="m">C++编译器</span>
+<span class="nf">CC</span><span class="o">:</span><span class="m">C 编译器</span>
+<span class="nf">CFLAGS</span><span class="o">:</span><span class="m">C 编译器选项</span>
+<span class="nf">CPPFLAGS</span><span class="o">:</span><span class="m">C++编译器选项</span>
+<span class="nf">CPP</span><span class="o">:</span><span class="m">C 预处理器名字</span>
+<span class="nf">CPPFLAGS</span><span class="o">:</span><span class="m">C++预处理器名字</span>
+</code></pre></div>
+
+
+<h1>自动推导依赖关系</h1>
+
+<p>看我们第一个例子,发些其扩展性非常差,如果需要添加、修改源文件,需要改动的地方非常大,而且常常也容易忘记去修改对于的 makefile 文件。<br/>
+好在编译器提供了自动推导的功能。<br/>
+在编译器中输入 g++ -MM main.cpp 得到如下结果</p>
+
+<pre><code>main.o: main.cpp main.h ClassA.h ClassB.h
+</code></pre>
+
+<p>自动为我们生成好了其所对应的依赖关系,还可以用 -M 参数,显示的结果还会包括一些系统文件。</p>
+
+<p>里我列下我写的一个 demo,由这个 demo 来解释一些常用的命令。同时这个demo也可以作为日常使用的<code>模板</code>。</p>
+
+<div class="highlight"><pre><code class="makefile"><span class="nv">EXE</span> <span class="o">:=</span> example
+<span class="nv">CC</span> <span class="o">:=</span> gcc
+<span class="nv">CXX</span> <span class="o">:=</span> g++
+
+<span class="nv">INCLUDE</span> <span class="o">+=</span> 
+<span class="nv">LIB</span> <span class="o">+=</span> 
+
+<span class="nv">SRC</span> <span class="o">:=</span> <span class="k">$(</span>sort <span class="k">$(</span>wildcard *.cpp *.c<span class="k">))</span>
+<span class="nv">OBJ</span> <span class="o">:=</span> <span class="k">$(</span>patsubst %.cpp,%.o, <span class="k">$(</span>patsubst %.c,%.o, <span class="k">$(</span>SRC<span class="k">)))</span>
+<span class="nv">DEP</span> <span class="o">:=</span> <span class="k">$(</span>foreach obj, <span class="k">$(</span>OBJ<span class="k">)</span>, <span class="k">$(</span>dir <span class="k">$(</span>obj<span class="k">))$(</span>basename <span class="k">$(</span>notdir <span class="k">$(</span>obj<span class="k">)))</span>.d<span class="k">)</span>
+
+<span class="nv">CFLAGS</span> <span class="o">+=</span> -g -fPIC -Wno-deprecated -Wall
+
+<span class="nv">PLATFORM</span> <span class="o">:=</span> <span class="k">$(</span>strip <span class="k">$(</span>shell <span class="nb">echo</span> <span class="sb">`</span>uname -m<span class="sb">`</span><span class="k">))</span>
+<span class="cp">ifeq ($(PLATFORM),x86_64)</span>
+    <span class="nv">MFLAGS</span> <span class="o">=</span> 64
+<span class="cp">else</span>
+    <span class="nv">MFLAGS</span> <span class="o">=</span> 32
+<span class="cp">endif</span>
+
+<span class="nf">all </span><span class="o">:</span> <span class="m">$(EXE)</span>
+
+<span class="k">$(</span>EXE<span class="k">)</span> : <span class="k">$(</span>OBJ<span class="k">)</span> <span class="k">$(</span>LIB<span class="k">)</span>
+    <span class="k">$(</span>CXX<span class="k">)</span> -m<span class="k">$(</span>MFLAGS<span class="k">)</span> <span class="k">$(</span>CFLAGS<span class="k">)</span> -o <span class="nv">$@</span> <span class="nv">$^</span>
+
+clean:
+    rm -f <span class="k">$(</span>OBJ<span class="k">)</span> <span class="k">$(</span>EXE<span class="k">)</span>
+
+cleanall:
+    rm -f <span class="k">$(</span>OBJ<span class="k">)</span> <span class="k">$(</span>EXE<span class="k">)</span> *.d *.o
+
+<span class="cp">ifneq ($(DEP),)</span>
+<span class="cp">-include $(DEP)</span>
+<span class="cp">endif</span>
+
+%.d: %.cpp
+    @echo <span class="s2">&quot;update $@ ...&quot;</span>; <span class="se">\</span>
+    <span class="nb">echo</span> -n <span class="nv">$&lt;</span> | sed s/<span class="se">\.</span>cpp/<span class="se">\.</span>o:/ &gt; <span class="nv">$@</span>; <span class="se">\</span>
+    <span class="k">$(</span>CC<span class="k">)</span> <span class="k">$(</span>INCLUDE<span class="k">)</span> -MM <span class="nv">$&lt;</span> | sed <span class="s1">&#39;1s/.*.://&#39;</span> &gt;&gt; <span class="nv">$@</span>;
+
+%.o: %.cpp
+    <span class="k">$(</span>CXX<span class="k">)</span> -m<span class="k">$(</span>MFLAGS<span class="k">)</span> <span class="k">$(</span>CFLAGS<span class="k">)</span> <span class="k">$(</span>INCLUDE<span class="k">)</span> -o <span class="nv">$@</span> -c <span class="nv">$&lt;</span>
+
+%.d: %.c
+    @echo <span class="s2">&quot;update $@ ...&quot;</span>; <span class="se">\</span>
+    <span class="nb">echo</span> -n <span class="nv">$&lt;</span> | sed s/<span class="se">\.</span>c/<span class="se">\.</span>o:/ &gt; <span class="nv">$@</span>; <span class="se">\</span>
+    <span class="k">$(</span>CC<span class="k">)</span> <span class="k">$(</span>INCLUDE<span class="k">)</span> -MM <span class="nv">$&lt;</span> | sed <span class="s1">&#39;1s/.*.://&#39;</span> &gt;&gt; <span class="nv">$@</span>;
+
+%.o: %.c
+    <span class="k">$(</span>CC<span class="k">)</span> -m<span class="k">$(</span>MFLAGS<span class="k">)</span> <span class="k">$(</span>CFLAGS<span class="k">)</span> <span class="k">$(</span>INCLUDE<span class="k">)</span> -o <span class="nv">$@</span> -c <span class="nv">$&lt;</span>
+</code></pre></div>
+
+
+
+
+	</div>
+
+	<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"kidlet"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- Duoshuo Comment END -->
+
+</article>
+  </div>
+
+  <div class="list-widget-area">
+    
+    <aside class="widget widget_recent_entries">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+        <li>
+          <a href="/2013/06-30/MakefileNote.html" title="Makefile 学习笔记">Makefile 学习笔记</a>
+        <li>
+        
+        <li>
+          <a href="/2013/06-16/pthread.html" title="多线程引起的“内存泄露”">多线程引起的“内存泄露”</a>
+        <li>
+        
+        <li>
+          <a href="/2013/06-03/vector.html" title="正确释放Vector的内存">正确释放Vector的内存</a>
+        <li>
+        
+        <li>
+          <a href="/2013/05-17/mykindle.html" title="入手Kindle Paperwhite">入手Kindle Paperwhite</a>
+        <li>
+        
+        <li>
+          <a href="/2013/05-12/acmdone.html" title="省赛结束">省赛结束</a>
+        <li>
+        
+      </ul>
+    </aside>
+
+    <aside class="widget widget_categories">
+      <h3 class="widget-title">Categories</h3>
+      <ul>
+
+        
+        <li>
+          <a href="/categories/web前端" title="">web前端</a>
+        </li>
+        
+        <li>
+          <a href="/categories/算法" title="">算法</a>
+        </li>
+        
+        <li>
+          <a href="/categories/随笔" title="">随笔</a>
+        </li>
+        
+        <li>
+          <a href="/categories/javascript" title="">javascript</a>
+        </li>
+        
+        <li>
+          <a href="/categories/web" title="">web</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux" title="">linux</a>
+        </li>
+        
+        <li>
+          <a href="/categories/programming" title="">programming</a>
+        </li>
+                
+
+      </ul>
+    </aside>
+  </div>
+</div>
+
+    <footer>
+      <p>Proudly powered by Jekyll</p>
+      <script src="http://s14.cnzz.com/stat.php?id=5036420&web_id=5036420&online=2" language="JavaScript"></script>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
+
